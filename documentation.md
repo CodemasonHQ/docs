@@ -2,5 +2,5 @@
     - [Introduction](/docs/{{version}}/introduction)
     - [Five-minute quick start](/docs/{{version}}/quickstart)
 - ##### Guides & References 
-    - [Mason JSON reference](/docs/{{version}}/installation)
-    - [CLI reference](/docs/{{version}}/configuration)
+    - [Mason JSON reference](/docs/{{version}}/mason-json)
+    - [CLI reference](/docs/{{version}}/mason-cli)
