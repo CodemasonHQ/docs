@@ -1,4 +1,12 @@
-# Welcome to Codemason
+
+# Introduction
+
+- [Welcome to Codemason](#welcome-to-codemason)
+- [What is Codemason?](#what-is-codemason)
+- [Next Steps](#next-steps)
+
+<a name="welcome-to-codemason"></a>
+## Welcome to Codemason
 Every developer knows the frustration all too well — writing code only to have your flow broken by needing to configure your environment, server or deployment process.
 
 Then before you know it, you're 5 tabs deep into how you can solve your problem in 10 different ways.
@@ -9,7 +17,8 @@ Then, once we've successfully thrown our adhoc DevOps process together, we can s
 
 Codemason was passion project borne out of that frustration.
 
-# What is Codemason?
+<a name="what-is-codemason"></a>
+## What is Codemason?
 Codemason helps developers build, deploy and manage their applications.
 
 We walk a fine line between *Platform as a Service* and *Containers as a Service*.
@@ -42,5 +51,6 @@ Pretty much straight out of the box 😎
 
 > I think of Codemason as a needle and thread that ties together various concepts, practices and open source projects in a simple, natural and intuitive way.
 
-# Next Steps
+<a name="next-steps"></a>
+## Next Steps
 [todo]
