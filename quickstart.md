@@ -1,5 +1,14 @@
 # Quickstart
 
+- [Introduction](#introduction)
+- [Setup](#setup)
+- [Build something amazing](#build-something-amazing)
+- [Development environment](#development-environment)
+- [Deploy dreams](#deploy-dreams)
+- [Updating your app](#updating-your-app)
+
+<a name="introduction"></a>
+## Introduction
 Let's get you started with Codemason.
 
 This quick start guide will walk you through a successful development flow with Codemason - from local development to deployment, prototype to production.
@@ -12,10 +21,11 @@ By the end of this guide, you will have
 
 All in under 5 minutes!
 
-> NOTE: This guide assumes you have:
+> This guide assumes you have:
 > - A free [Codemason account](http://mason.ci/register)
 > - Installed [NodeJS](https://nodejs.org/en/download/), [Git](https://git-scm.com/downloads), [Docker](https://docs.docker.com/engine/installation/) locally
 
+<a name="setup"></a>
 ## Setup
 Before we can get started, you will need to install the Mason CLI. The Mason CLI is distributed through NPM so installation is easy
 ```
@@ -35,7 +45,7 @@ $ mason login
    ✔ Login successful
 ```
 
-
+<a name="build-something-amazing"></a>
 ## Build something amazing
 Now it's time to write some code. For simplicity, we've prepared a simple little starter application for you which you can just clone to get started.
 ```
@@ -43,7 +53,7 @@ $ git clone _________
 $ cd _________
 ```
 
-> NOTE: Codemason relies heavily on Git. Every Codemason application is a git repository. It at the very least must be a local git repository which you can initialise with `git init` in your project directory.
+> Codemason relies heavily on Git. Every Codemason application is a git repository. It at the very least must be a local git repository which you can initialise with `git init` in your project directory.
 
 Let's make a change to `views/index.php` so you can leave your mark on this application
 ```html
@@ -63,6 +73,7 @@ $ git commit -m "Creating my first Codemason app"
 ```
 You now have a functioning git repository and have committed your own changes to it. Let's have a play with it!
 
+<a name="development-environment"></a>
 ## Development environment
 Codemason leverages the power of Docker throughout an application's lifecycle. This way, you and your team can be confident that your code will run right every time.
 
@@ -86,8 +97,9 @@ $ docker-compose up
 
 Your application will now be running at `http://<docker-ip>`
 
-> NOTE: We recommend using [Kitematic](https://kitematic.com/), as it provides an intuitive user interface for running Docker containers.
+> We recommend using [Kitematic](https://kitematic.com/), as it provides an intuitive user interface for running Docker containers.
 
+<a name="deploy-dreams"></a>
 ## Deploy dreams
 Developer experience is our top priority. Everything we do is about solving the problems that interrupt your flow and distract you from focusing on what counts, building great apps.
 
@@ -125,6 +137,7 @@ $ mason deploy
 
 The `deploy` command takes the code you've checked in to `git` and sends it to your Codemason `git remote`. It then builds your Docker image and pushes it to the private registry. Then, Codemason spins up your app on your server.
 
+<a name="updating-your-app"></a>
 ## Updating your app
 Updating your app is just as easy. 
 
