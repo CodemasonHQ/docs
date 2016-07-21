@@ -53,7 +53,7 @@ $ git clone _________
 $ cd _________
 ```
 
-> Codemason relies heavily on Git. Every Codemason application is a git repository. It at the very least must be a local git repository which you can initialise with `git init` in your project directory.
+Codemason relies heavily on Git. Every Codemason application is a git repository. It at the very least must be a local git repository which you can initialise with `git init` in your project directory.
 
 Let's make a change to `views/index.php` so you can leave your mark on this application
 ```html
@@ -121,7 +121,7 @@ $ mason create
 This command creates an application on Codemason for you, prepares a `git remote` repository to transport your code and updates the `.gitlab-ci.yml` so Codemason knows how to build your app.
 
 
-Commit the changes to your build script 
+Commit the changes to your build script:
 ```
 $ git add .
 $ git commit -m "Build script"
