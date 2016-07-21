@@ -149,7 +149,7 @@ $ git add .
 ```
 And commit the changes
 ```
-$ git commit -m “Update app"
+$ git commit -m "Update app"
 ```
 
 Deploy
