@@ -120,6 +120,13 @@ $ mason create
 
 This command creates an application on Codemason for you, prepares a `git remote` repository to transport your code and updates the `.gitlab-ci.yml` so Codemason knows how to build your app.
 
+
+Commit the changes to your build script 
+```
+$ git add .
+$ git commit -m "Build script"
+```
+
 You can now deploy your app:
 ```
 $ mason deploy
