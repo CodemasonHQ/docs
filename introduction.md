@@ -3,6 +3,8 @@
 
 - [Welcome to Codemason](#welcome-to-codemason)
 - [What is Codemason?](#what-is-codemason)
+- [What powers Codemason?](#what-powers-codemason)
+- [Why Codemason?](#why-codemason)
 - [Next Steps](#next-steps)
 
 <a name="welcome-to-codemason"></a>
@@ -29,6 +31,8 @@ And that's what really sets Codemason apart:
 
 We don't believe in black magic and we don't like sneaky lock-in tactics. We want to operate as close to an open source project as possible.
 
+<a name="what-powers-codemason"></a>
+## What powers Codemason?
 Behind the scenes, Codemason brings together a bunch of different services and components by making them talk to each other so there's a clearly defined flow from prototype to production.
 
 - Your Server - Codemason supports any Linux host with Docker installed. You retain total control of your server.
@@ -40,6 +44,8 @@ Behind the scenes, Codemason brings together a bunch of different services and c
     - Private Registry - we utilise GitLab's new private image registry functionality to build a new Docker image for your app on every push.
 - Rancher - we use Rancher for orchestration (putting your containers on to your server)
 
+<a name="why-codemason"></a>
+## Why Codemason?
 We bring all of this together as a well packaged, clear and coherent service to give developers:
 - CI/CD
 - Different application environments e.g. development, staging, production
