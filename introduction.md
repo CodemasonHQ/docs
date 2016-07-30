@@ -15,7 +15,7 @@ Of course, we'll repeat this process a handful of times while we stitch together
 
 Then, once we've successfully thrown our adhoc DevOps process together, we can slowly back away from our house of cards. Only to do it all again for the next project.
 
-Codemason was passion project borne out of that frustration.
+Codemason was a passion project borne out of that frustration.
 
 <a name="what-is-codemason"></a>
 ## What is Codemason?
