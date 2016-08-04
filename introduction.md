@@ -15,7 +15,7 @@ Then before you know it, you're 5 tabs deep into how you can solve your problem 
 
 Of course, we'll repeat this process a handful of times while we stitch together a bunch of the DevOps stuff that we **must have** because otherwise our project isn't a *real* project...
 
-Then, once we've successfully thrown our adhoc DevOps process together, we can slowly back away from our house of cards. Only to do it all again for the next project.
+Then, once we've successfully thrown our adhoc DevOps process together, we can slowly back away from our house of cards and get back to coding. Only to do it all again for the next project.
 
 Codemason was a passion project borne out of that frustration.
 
@@ -25,7 +25,7 @@ Codemason helps developers build, deploy and manage their applications.
 
 We walk a fine line between *Platform as a Service* and *Containers as a Service*.
 
-You could probably call us *"DevOps as a Service"*. We handle or simplify DevOps related stuff that gets in the way of developers actually developing, without crippling you if you outgrow us!
+You could probably call us *"DevOps as a Service"*. We handle or simplify DevOps related stuff that gets in the way of developers actually developing, without crippling you when you grow!
 
 And that's what really sets Codemason apart:
 
@@ -38,9 +38,9 @@ Behind the scenes, Codemason brings together a bunch of different services and c
 - Your Server - Codemason supports any Linux host with Docker installed. You retain total control of your server.
 - Docker - we're big believers in containerisation. Everything that Codemason runs on your server is a container. Because it's containerised, we don't care what it is - we just run it.
 - GitLab Community Edition
-    - GitLab provides some great functionality for Codemason to integrate with that it just made sense to use them. Here's how we use GitLab.
-    - Repositories - we use a private [git remote](https://git-scm.com/docs/git-remote) to seamlessly sync your repo to Codemason regardless of your git provider so deployment is easy as `$ mason deploy`.
-    - Continuous Integration - GitLab already has CI built in. Naturally we use this to enable the CI component of Codemason. Every time your remote is updated it runs the commands defined in your config file.
+    - GitLab provides some great functionality for Codemason to integrate with so it just makes sense to use them. Here's how we use GitLab.
+    - Repositories - we use a private [git remote](https://git-scm.com/docs/git-remote) to seamlessly sync your repo to Codemason, regardless of your git provider. Making deployment easy as `$ mason deploy`.
+    - Continuous Integration - GitLab already has CI built in. We use this to enable the CI component of Codemason. Every time your remote is updated it runs the commands defined in your `.gitlab-ci.yml` file.
     - Private Registry - we utilise GitLab's new private image registry functionality to build a new Docker image for your app on every push.
 - Rancher - we use Rancher for orchestration (putting your containers on to your server)
 
@@ -59,4 +59,4 @@ Pretty much straight out of the box 😎
 
 <a name="next-steps"></a>
 ## Next Steps
-[todo]
+Now you know a bit more about Codemason, head on over to our Five-minute quick start where we can start hacking on our first Codemason app together.
