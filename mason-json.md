@@ -71,7 +71,7 @@ Describes the type of resource we are dealing with. Currently `instance`, `servi
     "type": "instance",
 }
 ```
-<a name="mason-json-version"></a>
+<a name="mason-json-mason-version"></a>
 ## Mason Version
 *[string, required]*
 Identifies how your Mason JSON file should be parsed.
