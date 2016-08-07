@@ -233,7 +233,6 @@ In this example, we are creating a simple PHP application and connecting it with
             },
         }
     ],
-    
 }
 ```
 
@@ -257,26 +256,27 @@ You can define a service in a similar fashion with one minor additional requirem
         "POSTGRES_PASSWORD": "mypass",
         "POSTGRES_DB": "test"
     },
+    
     "questions": [
-            {
-                "key": "POSTGRES_USER", 
-                "value": "admin",
-                "description": "This variable will create the specified user with superuser power",
-                "required": true,
-            },
-            {
-                "key": "POSTGRES_PASSWORD", 
-                "value": "",
-                "description": "This environment variable sets the superuser password for PostgreSQL",
-                "required": true,
-            },
-            {
-                "key": "POSTGRES_DB", 
-                "value": "",
-                "description": "Default database that is created. If empty, then the value of POSTGRES_USER will be used.",
-                "required": false,
-            },
-        ],
+        {
+            "key": "POSTGRES_USER", 
+            "value": "admin",
+            "description": "This variable will create the specified user with superuser power",
+            "required": true,
+        },
+        {
+            "key": "POSTGRES_PASSWORD", 
+            "value": "",
+            "description": "This environment variable sets the superuser password for PostgreSQL",
+            "required": true,
+        },
+        {
+            "key": "POSTGRES_DB", 
+            "value": "",
+            "description": "Default database that is created. If empty, then the value of POSTGRES_USER will be used.",
+            "required": false,
+        },
+    ],
 }
 ```
 
