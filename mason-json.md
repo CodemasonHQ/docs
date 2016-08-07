@@ -180,15 +180,21 @@ Define links to other services
 <a name="mason-json-registries"></a>
 ## Registries
 *[array, optional]* 
+Through Mason JSON, you can also access your private registries and do awesome things *privately*.
 
 ### Example
 ```
-
 {
     "registries": [
-        // ...
+        {
+            "address": "registry.example.com",
+            "email": "foo@example.com",
+            "username": "foo",
+            "password": "bar123"
+        }
     ],
 }
+```
 ```
 
 <a name="application-example"></a>
