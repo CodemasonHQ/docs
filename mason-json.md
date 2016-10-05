@@ -29,7 +29,7 @@ Additional capabilities include:
 - Questions - accept user input
 - Registries - connect to private registries
 - Types - define instances, services and applications
-- Standard format makes programatically dealing with container orchestration a breeze
+- Standard format makes programmatically dealing with container orchestration a breeze
 
 Eventually your Mason JSON gets parsed by an internal service at Codemason we call Mortar.
 
