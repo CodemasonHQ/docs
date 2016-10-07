@@ -124,10 +124,10 @@ Set the number of containers to spin up.
 <a name="mason-json-memory"></a>
 ## Memory
 *[string, optional]*
-Set the memory limit for the container.
+Set the memory limit for the container in `mb`.
 ```json
 {
-  "memory": "128mb",
+  "memory": "128",
 }
 ```
 
