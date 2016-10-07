@@ -10,14 +10,20 @@
   - [Mason Version](#mason-json-mason-version)
   - [Image](#mason-json-image)
   - [Command](#mason-json-command)
+  - [Entrypoint](#mason-json-entrypoint)
+  - [Scale](#mason-json-scale)
+  - [Memory](#mason-json-memory)
+  - [CPU](#mason-json-cpu)
+  - [Privileged](#mason-json-privileged)
   - [Ports](#mason-json-ports)
   - [Environment](#mason-json-environment)
+  - [Labels](#mason-json-labels)
+  - [Volumes](#mason-json-volumes)
   - [Links](#mason-json-links)
   - [Questions](#mason-json-questions)
   - [Registries](#mason-json-registries)
 - [Example Application Mason JSON](#application-example)
 - [Example Service Mason JSON](#service-example)
-- [Example Instance Mason JSON](#instance-example)
 
 <a name="mason-json-reference"></a>
 #  Mason JSON Reference
@@ -28,13 +34,7 @@ Although it's very similar, it also adds functionality beyond what is capable wi
 Additional capabilities include:
 - Questions - accept user input
 - Registries - connect to private registries
-- Types - define instances, services and applications
 - Standard format makes programmatically dealing with container orchestration a breeze
-
-Eventually your Mason JSON gets parsed by an internal service at Codemason we call Mortar.
-
-Mortar takes the Mason JSON and validates it. Once it’s been validated it "pre-processes" it - it figures out exactly what type of Mason JSON we're dealing with, responds accordingly and handles service discovery (find or create dependencies). Finally Mortar provisions your instances and/or services.
-> mortar: a substance used in building for joining bricks or stones
 
 <a name="mason-json-name"></a>
 ## Name
@@ -64,17 +64,17 @@ Link to the repository containing the related source code
 <a name="mason-json-type"></a>
 ## Type
 *[string, required]*
-Describes the type of resource we are dealing with. Currently `instance`, `service` and `application` are they only available types.
+Describes the type of Mason JSON we are dealing with. Currently `service` and `application` are they only available types.
 
 ```json
 {
-    "type": "instance",
+    "type": "service",
 }
 ```
 <a name="mason-json-mason-version"></a>
 ## Mason Version
 *[string, required]*
-Identifies how your Mason JSON file should be parsed.
+Identifies how your Mason JSON should be parsed.
 ```json 
 {
     "masonVersion": "v1", 
@@ -87,7 +87,7 @@ Identifies how your Mason JSON file should be parsed.
 Specify the Docker image to start the container from. This provides the framework and runtime support for your applications.
 ```json 
 {
-    "image": "masonci/php:v5.6-apache",
+    "image": "codemasonhq/php",
 }
 ```
 
@@ -97,14 +97,63 @@ Specify the Docker image to start the container from. This provides the framewor
 The command that will run to launch and run your application. Our official buildpacks run a default command if this parameter is left empty. However, this option is available if you'd like to get your hands dirty. 
 ```json
 {
-    "command": "apache2 -D FOREGROUND"
+    "command": "apache2 -D FOREGROUND",
+}
+```
+
+<a name="mason-json-entrypoint"></a>
+## Entrypoint
+*[string, optional]*
+Set the entrypoint for your container. The entrypoint is prefixed to any command you run through the container.
+```json
+{
+  "entrypoint": "command param1 param2",
+}
+```
+
+<a href="mason-json-scale"></a>
+## Scale
+*[integer, optional]*
+Set the number of containers to spin up.
+```json
+{
+  "scale": 1,
+}
+```
+
+<a name="mason-json-memory"></a>
+## Memory
+*[string, optional]*
+Set the memory limit for the container.
+```json
+{
+  "memory": "128mb",
+}
+```
+
+<a name="mason-json-cpu"></a>
+## CPU
+*[string, optional]*
+The value of shares of the CPU available to the container.
+```json
+{
+  "cpu": "04",
+}
+```
+<a name="mason-json-privileged"></a>
+## Privileged
+*[bool, optional]*
+Grant extended privileges to the container.
+```json
+{
+  "privileged": false,
 }
 ```
 
 <a name="mason-json-ports"></a>
 ## Ports
 *[array, optional]*
-Define the ports to expose. You may specify specific ports (`HostPort:ContainerPort`) or just specify the container port and a random host port will be chosen. 
+Define the ports to expose. You may specify specific ports (`HostPort:ContainerPort`) or just specify the container port and a random host port will be allocated. 
 ```json
 {
     "ports": [
@@ -116,7 +165,7 @@ Define the ports to expose. You may specify specific ports (`HostPort:ContainerP
 <a name="mason-json-environment"></a>
 ## Environment
 *[object, optional]*
-Set environment variables 
+Set environment variables.
 ```json
 {
     "environment": {
@@ -127,10 +176,34 @@ Set environment variables
 }
 ```
 
+<a name="mason-json-labels"></a>
+## Labels
+Set labels.
+*[object, optional]*
+```json
+{
+  "labels": {
+    "com.example.foo": "bar"
+  }
+}
+```
+
+<a name="mason-json-volumes"></a>
+## Volumes
+*[array, optional]*
+Declare volumes to mount.
+```json 
+{
+  "volumes": [
+    "./data/mysql:/var/lib/mysql:rw"
+  ]
+}
+```
+
 <a name="mason-json-links"></a>
 ## Links
 *[array, optional]*
-Define links to other services
+Define links to other services.
 ```json
 {
     "links": [
@@ -195,12 +268,11 @@ Through Mason JSON, you can also access your private registries and do awesome t
     ],
 }
 ```
-```
 
 <a name="application-example"></a>
 # Application Mason JSON
-The Mason JSON file is so powerful, you can use it to define the architecture of your entire application.
-To do this, simply define the `instances` and `services` your application requires. Instances and services accept the same schema as defined in this reference document. 
+Mason JSON is so powerful, you can use it to define the architecture of your entire application.
+To do this, simply define the `services` your application requires. Services accept the same schema as defined in this reference document. 
 
 ## Example 
 In this example, we are creating a simple PHP application and connecting it with a PostgreSQL database. 
@@ -212,8 +284,7 @@ In this example, we are creating a simple PHP application and connecting it with
     "keywords": ["codemason", "demo", "php"],
     "repository": "https://github.com/benmag/pebble",
     "masonVersion": "v1",
-
-    "instances": [
+    "services": [
         {
             "name": "app",
             "description": "Web server",
@@ -221,10 +292,7 @@ In this example, we are creating a simple PHP application and connecting it with
             "links": [
                 "postgres"
             ]
-        }
-    ],
-
-    "services": [
+        },
         {
             "name": "postgres",
             "description": "Object relational database",
@@ -244,7 +312,7 @@ In this example, we are creating a simple PHP application and connecting it with
 
 <a name="services-example"></a>
 # Service Mason JSON
-You can define a service in a similar fashion with one minor additional requirement. You must define it's type as a service (`type: "service"`)
+You can also just define a single service in a similar fashion with one minor additional requirement. You must define it's type as a service (`type: "service"`).
 
 ## Example
 ```json
@@ -283,20 +351,5 @@ You can define a service in a similar fashion with one minor additional requirem
             "required": false,
         },
     ],
-}
-```
-
-<a name="instances-example"></a>
-# Instance Mason JSON
-An `instance` is your main process, it's what runs you application.
-
-## Example
-```json
-{
-    "name": "web",
-    "description": "Web server",
-    "image": "codemasonhq/php",
-    "type": "service",
-    "masonVersion": "v1",
 }
 ```
