@@ -55,7 +55,7 @@ $ cd _________
 
 Codemason relies heavily on Git. Every Codemason application is a git repository. It at the very least must be a local git repository which you can initialise with `git init` in your project directory.
 
-Let's make a change to `views/index.php` so you can leave your mark on this application
+Let's make a change to `resourcesviews/welcome.php` so you can leave your mark on this application
 ```html
 ...
 <div class="container">
@@ -81,7 +81,7 @@ Codemason leverages the power of Docker throughout an application's lifecycle. T
 
 With the Mason CLI, you can Dockerize your apps with a single command which generates the Docker files required and adds them to the current working directory
 ```
-$ mason craft --with="php"
+$ mason craft laravel
 ```
 
 Commit our new Docker files to source control
@@ -105,13 +105,13 @@ Developer experience is our top priority. Everything we do is about solving the 
 
 First, use the `create` command to create a Codemason application. The CLI suggest default values, but you can override them as required.
 ```
-$ mason create
+$ mason create --application quickstart
 
    Creating application on Codemason...
 
-     Application name (spoon-guide-1451)
-     Application path (/Users/ben/pebble)
-               Domain (spoon-guide-1451.mason.ci)
+⁣     Application name (quickstart)
+⁣         Service name (web)
+⁣         Service path (/Users/ben/quickstart)
 
    ✔ Created application
    ✔ Created remote repository
@@ -127,9 +127,14 @@ $ git add .
 $ git commit -m "Build script"
 ```
 
+Push your changes to your Codemason Git remote. This sends your code to your Codemason `git remote`. It then builds your Docker image and pushes it to the private registry, as per your build instructions in `.gitlab-ci.yml`. 
+```
+git push codemason master
+```
+
 You can now deploy your app:
 ```
-$ mason deploy
+$ mason deploy --to quickstart
 
    Deploying application to Codemason...
 
@@ -142,11 +147,11 @@ $ mason deploy
    (¸.•´ (¸.•` ¤ Application deployed and running at hello-world-1234.mason.ci
 ```
 
-The `deploy` command takes the code you've checked in to `git` and sends it to your Codemason `git remote`. It then builds your Docker image and pushes it to the private registry. Then, Codemason spins up your app on your server.
+The `deploy` command posts [Mason JSON](#) to our [API](#) which spins up your app on your server for you.
 
 <a name="updating-your-app"></a>
 ## Updating your app
-Updating your app is just as easy. 
+Updating your app is just as easy the `upgrade` command.
 
 Simply modify your application as you would normally.
 
@@ -154,16 +159,13 @@ Then add the modified files to git
 ```
 $ git add .
 ```
-And commit the changes
+Commit and push the changes
 ```
 $ git commit -m "Update app"
+$ git push codemason master
 ```
 
-Deploy
+Run the upgrade command. Be sure to specify the service you wish to upgrade in the following format `application/service`.
 ```
-$ mason deploy
+$ mason upgrade quickstart/web
 ```
-
-
-## Next steps
-[todo]
