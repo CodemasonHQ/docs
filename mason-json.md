@@ -22,8 +22,10 @@
   - [Links](#mason-json-links)
   - [Questions](#mason-json-questions)
   - [Registries](#mason-json-registries)
+  - [Targets](#mason-json-targets)
 - [Example Application Mason JSON](#application-example)
 - [Example Service Mason JSON](#service-example)
+- [Example Load Balancer Mason JSON](#loadbalancer-example)
 
 <a name="mason-json-reference"></a>
 #  Mason JSON Reference
@@ -64,13 +66,14 @@ Link to the repository containing the related source code
 <a name="mason-json-type"></a>
 ## Type
 *[string, required]*
-Describes the type of Mason JSON we are dealing with. Currently `service` and `application` are they only available types.
+Describes the type of Mason JSON we are dealing with. Currently `application`, `service` and `loadbalancer` are they only available types.
 
 ```json
 {
     "type": "service",
 }
 ```
+
 <a name="mason-json-mason-version"></a>
 ## Mason Version
 *[string, required]*
@@ -203,11 +206,11 @@ Declare volumes to mount.
 <a name="mason-json-links"></a>
 ## Links
 *[array, optional]*
-Define links to other services.
+Define links to other services. Define a link in the following format, `application/service`. You can even provide an alias for links,  `application/service:alias`.
 ```json
 {
     "links": [
-        "postgres",
+        "pebble/postgres:database",
     ],
 }
 ```
@@ -267,6 +270,19 @@ Through Mason JSON, you can also access your private registries and do awesome t
         }
     ],
 }
+```
+
+<a name="mason-json-targets"></a>
+## Targets
+*[array, optional]*
+An array containing targets for your Load Balancer.  
+```
+[
+	{
+		'service' => "1s123",
+		'target' => "test.mason.ci:90/path=80"
+	}
+]
 ```
 
 <a name="application-example"></a>
@@ -351,5 +367,27 @@ You can also just define a single service in a similar fashion with one minor ad
             "required": false,
         },
     ],
+}
+```
+
+
+<a name="loadbalancer-example"></a>
+# Load Balancer JSON
+You can even define a Load Balancer in Mason JSON. 
+```
+{
+	"name": "lb",
+	"description": "My Load Balancer",
+	"type": "loadbalancer",
+	"masonVersion": "v1",
+	"ports": [
+		"80:80"
+	],
+	"targets": [
+		{
+			"service": "1s123",
+			"target": "test.mason.ci=80"
+		}
+	]
 }
 ```
