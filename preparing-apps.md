@@ -44,4 +44,4 @@ $ git commit -m "Docker"
 
 <a name="next-steps"></a>
 ## Next steps
-After you have prepared your app, you are ready to create an app.
+After you have prepared your app, you are ready to [create an app](/docs/{{version}}/creating-apps).
