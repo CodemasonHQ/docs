@@ -31,7 +31,7 @@ Craft kits are a super flexible and portable way to define Docker environments. 
 
 Official craft kits provide an opinionated starting point for Dockerizing your apps in a single command. 
 
-You can find more information and all the official craft kits within the [CodemasonHQ organisation](https://github.com/CodemasonHQ?utf8=%E2%9C%93&q=craft-kit&type=&language=). 
+You can find more information and all the official craft kits within the [CodemasonHQ organisation](https://github.com/CodemasonHQ?utf8=%E2%9C%93&q=craft-kit&type=&language=). Each craft kit is prefixed with `craft-kit-` to make them easy to find. 
 
 
 <a name="launching-development"></a>
