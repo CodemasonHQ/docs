@@ -14,7 +14,7 @@
     - [Setting up local development](/docs/{{version}}/local-development)
     - [Building your Docker image](/docs/{{version}}/building)
     - [Deploying your app](/docs/{{version}}/deploying-apps)
-    - [Upgrading an existing app](/docs/{{version}}/environments)
+    - [Upgrading an existing app](/docs/{{version}}/upgrading)
     - [Managing environments](/docs/{{version}}/environments)
     - [Scaling](/docs/{{version}}/environments)
 
