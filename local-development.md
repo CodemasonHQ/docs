@@ -38,7 +38,7 @@ You can find more information and all the official craft kits within the [Codema
 ## Launching your development environment
 Now you need to do is spin up your environment with Docker 
 ```
-$ docker compose up 
+$ docker-compose up 
 ```
 
 That's all! You're now running your Laravel application with Docker!
