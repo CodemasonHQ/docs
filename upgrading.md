@@ -1,7 +1,7 @@
 # Upgrading an existing app
 
 - [Introduction](#introduction)
-- [Deployment](#deployment)
+- [Upgrading](#upgrading)
 - [Next steps](#next-steps)
 
 <a name="introduction"></a>
@@ -22,7 +22,7 @@ $ git push codemason master
 This will trigger our CI runners and build an image with your changes in it as per the build instructions in your `gitlab-ci.yml` file.
 
 
-<a name="deployment"></a>
+<a name="upgrading"></a>
 ## Upgrading 
 Run the `upgrade` command to update an existing application. Be sure to specify the service you wish to upgrade in the following format `application/service`
 ```
