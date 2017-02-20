@@ -59,4 +59,4 @@ Pretty much straight out of the box 😎
 
 <a name="next-steps"></a>
 ## Next Steps
-Now you know a bit more about Codemason, head on over to our Five-minute quick start where we can start hacking on our first Codemason app together.
+Now you know a bit more about Codemason, head on over to our [five-minute quick start](/docs/{{version}}/quickstart) where we can start hacking on our first Codemason app together.
