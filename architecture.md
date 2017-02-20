@@ -1,13 +1,13 @@
 # Application architecture
 
-- [Overview](#overview)
+- [Introduction](#introduction)
 - [What are Environments](#environments)
 - [What is an Application](#applications)
 - [What is a Service](#services)
 
 
-<a name="overview"></a>
-## Overview
+<a name="introduction"></a>
+## Introduction
 There's too much duct tape and chewing gum keeping our applications online... Codemason clears all that away. It's the same as choosing to use a framework to help us write better, cleaner, code faster. This is a "framework" to deploy and manage your apps in more reliable, less time consuming way.
 
 Applications on Codemason are normal Docker applications, we just abstract away a lot of the tedious work that goes into running and managing them. Our focus has been to make sure that anyone can use Codemason even without experience using Docker before. 

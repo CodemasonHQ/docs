@@ -4,8 +4,8 @@
 - [Adding servers](#adding-servers)
 
 
-<a name="overview"></a>
-## Overview
+<a name="introduction"></a>
+## Introduction
 Before you will be able to run any apps with Codemason, you will need to have added at least one server to an environment of your choosing. When multiple servers are added to an environment, they form a cluster where their resources are pooled and services are automatically spread across to utilise resources more effectively. 
 
 You can add any Linux server running Docker 1.10.3+. 
