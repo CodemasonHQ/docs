@@ -16,7 +16,7 @@
     - [Deploying your app](/docs/{{version}}/deploying-apps)
     - [Upgrading an existing app](/docs/{{version}}/upgrading)
     - [Managing environments](/docs/{{version}}/environments)
-    - [Scaling](/docs/{{version}}/environments)
+    - [Scaling](/docs/{{version}}/scaling)
 
 - ##### Languages
     - [PHP](/docs/{{version}}/getting-started-with-php)
