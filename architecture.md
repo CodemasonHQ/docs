@@ -28,4 +28,4 @@ That's why Codemason provides a handy catalog. The catalog simplifies the proces
 
 <a name="services"></a>
 ## What is a Service? 
-Services are the building blocks of your application. A service is one or more containers created from the same Docker image. This is where the magic happens, this is what makes Codemason so powerful! At the end of the day, Codemason doesn’t mind what you’re running because they’re all Docker images. You could spin up a MySQL database, a RabbitMQ message queue or your app written in PHP, Node.js, Ruby, Java, Python etc. Codemason doesn’t mind.
+Services are the building blocks of your application. A service is one or more containers created from the same Docker image. This is where the magic happens, this is what makes Codemason so powerful! At the end of the day, Codemason doesn't mind what you're running because they're all Docker images. You could spin up a MySQL database, a RabbitMQ message queue or your app written in PHP, Node.js, Ruby, Java, Python etc. Codemason doesn't mind.

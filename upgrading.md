@@ -6,7 +6,7 @@
 
 <a name="introduction"></a>
 ## Introduction
-By this stage, you will have already seen how easy it is to deploy an application Codemason. Now we’ll show you just how easy it is to push your changes to Codemason an upgrade your app.
+By this stage, you will have already seen how easy it is to deploy an application Codemason. Now we'll show you just how easy it is to push your changes to Codemason an upgrade your app.
 
 Simply modify your application as you would normally and ensure you add the modified files to git
 ```

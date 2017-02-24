@@ -22,7 +22,7 @@ Dependencies: NodeJS, Git, Docker
 
 <a name="updating"></a>
 ## Updating the CLI
-We make improvements to the Mason CLI regularly so it’s a good idea to stay up-to-date for the best experience! To update the Mason CLI simply run the self update command.
+We make improvements to the Mason CLI regularly so it's a good idea to stay up-to-date for the best experience! To update the Mason CLI simply run the self update command.
 
 ```
 $ mason self-update
