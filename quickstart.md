@@ -55,7 +55,7 @@ $ cd _________
 
 Codemason relies heavily on Git. Every Codemason application is a git repository. It at the very least must be a local git repository which you can initialise with `git init` in your project directory.
 
-Let's make a change to `resourcesviews/welcome.php` so you can leave your mark on this application
+Let's make a change to `resources/views/welcome.php` so you can leave your mark on this application
 ```html
 ...
 <div class="container">
