@@ -54,7 +54,7 @@ A nice example is the [laravel craft kit](https://github.com/CodemasonHQ/craft-k
 | default  | *[array]* Default containers for craft kit to use                                 | 
 | masonJson | *[object]* [Mason JSON](http://mason.ci/docs/mason-json) for available containers |
 
-Example
+### Example index.js
 ```javascript
 module.exports = {
   name: 'laravel',
