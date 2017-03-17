@@ -20,12 +20,6 @@
 
 - ##### Languages
     - [PHP](/docs/{{version}}/getting-started-with-php)
-    - [Node.js](/docs/{{version}}/getting-started-with-nodejs)
-    - [Java](/docs/{{version}}/getting-started-with-java)
-    - [Ruby](/docs/{{version}}/getting-started-with-ruby)
-    - [Python](/docs/{{version}}/getting-started-with-python)
-    - [Go](/docs/{{version}}/getting-started-with-go)
-    - [Scala](/docs/{{version}}/getting-started-with-scala)
 
 - ##### Ecosystem
     - [Mason JSON reference](/docs/{{version}}/mason-json)
