@@ -49,29 +49,13 @@ $ mason login
 ## Build something amazing
 Now it's time to write some code. For simplicity, we've prepared a simple little starter application for you which you can just clone to get started.
 ```
-$ git clone _________
-$ cd _________
+$ git clone https://github.com/CodemasonHQ/getting-started-php quickstart
+$ cd quickstart
 ```
 
 Codemason relies heavily on Git. Every Codemason application is a git repository. It at the very least must be a local git repository which you can initialise with `git init` in your project directory.
 
-Let's make a change to `resources/views/welcome.php` so you can leave your mark on this application
-```html
-...
-<div class="container">
-    <div class="content">
-        <div class="title">~ Your new message ~</div>
-    </div>
-</div>
-...
-```
-
-Commit your changes to source control (Git)
-```
-$ git add .
-$ git commit -m "Creating my first Codemason app"
-```
-You now have a functioning git repository and have committed your own changes to it. Let's have a play with it!
+You now have a functioning git repository. Let's have a play with it!
 
 <a name="development-environment"></a>
 ## Development environment
@@ -147,7 +131,7 @@ $ mason deploy --to quickstart
    (¸.•´ (¸.•` ¤ Application deployed and running at hello-world-1234.mason.ci
 ```
 
-The `deploy` command posts [Mason JSON](#) to our [API](#) which spins up your app on your server for you.
+The `deploy` command posts [Mason JSON](/docs/{{version}}/mason-json) to our [API](/docs/{{version}}/api) which spins up your app on your server for you.
 
 <a name="updating-your-app"></a>
 ## Updating your app
