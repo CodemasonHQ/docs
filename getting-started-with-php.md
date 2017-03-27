@@ -21,10 +21,16 @@ This guide will walk you through a successful deployment of a PHP application wi
 ## Setup
 Start by pulling a copy of our demo PHP project. 
 ```
-$ git pull ...
+$ git clone https://github.com/CodemasonHQ/getting-started-php
+$ cd getting-started-php
 ```
 
-This is just a basic *Hello World* project in pure PHP. 
+This is just a simple quote rotator app. Every time you load the page, it will randomly select a quote from an array and display it.
+
+You will also need to install dependencies with Composer
+```
+$ composer install
+```
 
 <a name="development-environment"></a>
 ## Development environment
@@ -58,13 +64,13 @@ Developer experience is our top priority. Everything we do is about solving the 
 
 First, use the `create` command to create a Codemason application. The CLI suggest default values, but you can override them as required.
 ```
-$ mason create --application starting-with-php
+$ mason create --application getting-started-php
 
    Creating application on Codemason...
 
-⁣     Application name (starting-with-php)
-⁣         Service name (web)
-⁣         Service path (/Users/ben/starting-with-php)
+⁣     Application name (getting-started-php)
+⁣         Service name (app)
+⁣         Service path (/Users/ben/getting-started-php)
 
    ✔ Created application
    ✔ Created remote repository
@@ -87,7 +93,7 @@ git push codemason master
 
 You can now deploy your app:
 ```
-$ mason deploy --to starting-with-php
+$ mason deploy --to getting-started-php
 
    Deploying application to Codemason...
 
@@ -97,18 +103,29 @@ $ mason deploy --to starting-with-php
 
      *´¨)
     ¸.•´ ¸.•*´¨) ¸.•*¨)
-   (¸.•´ (¸.•` ¤ Application deployed and running at hello-world-1234.mason.ci
+   (¸.•´ (¸.•` ¤ Application deployed and running
 ```
 
-The `deploy` command posts [Mason JSON](#) to our [API](#) which spins up your app on your server for you.
+The `deploy` command posts [Mason JSON](/docs/{{version}}/mason-json) to our [API](/docs/{{version}}/api) which spins up your app on your server for you.
 
 <a name="updating-your-app"></a>
 ## Updating your app
 Updating your app is just as easy the `upgrade` command.
 
-Simply modify your application as you would normally.
+First, let's make a change to `templates/index.phtml` so you can leave your mark on this application.
+```html
+...
+  <div class="panel">
+      <h1><i><?php echo $quote; ?></i></h1>
+      <small>
+        <a href="https://twitter.com/intent/tweet?text=<?php echo $quote; ?> @codemasonhq">Tweet This!</a>
+      </small>
+  </div>
+...
+```
 
-Then add the modified files to git
+
+Add your changes to source control (Git)
 ```
 $ git add .
 ```
@@ -120,5 +137,5 @@ $ git push codemason master
 
 Run the upgrade command. Be sure to specify the service you wish to upgrade in the following format `application/service`.
 ```
-$ mason upgrade starting-with-php/web
+$ mason upgrade getting-started-php/app
 ```
