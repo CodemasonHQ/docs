@@ -8,7 +8,7 @@
 ## Introduction
 The Mason CLI (command line interface) is a helpful command line tool you can use to improve your development and deployment experience. It wraps around the Codemason API and abstracts away the tedious bits so you can get back to focusing on building your app. 
 
-With the Mason CLI, we also introduced craft kits. Craft kits are the hassle free way to setup a Docker development environment for the language/framework of your choice. They are an excellent way to ease into building Docker powered apps without having to learn the ins and outs of Docker.
+With the Mason CLI, we also introduced [Craft kits](/docs/{{version}}/craft-kits). Craft kits are the hassle free way to setup a Docker development environment for the language/framework of your choice. They are an excellent way to ease into building Docker powered apps without having to learn the ins and outs of Docker.
 
 <a name="installing-the-cli"></a>
 ## Installing the CLI 
