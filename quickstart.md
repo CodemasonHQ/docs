@@ -113,7 +113,7 @@ $ git commit -m "Build script"
 
 Push your changes to your Codemason Git remote. This sends your code to your Codemason `git remote`. It then builds your Docker image and pushes it to the private registry, as per your build instructions in `.gitlab-ci.yml`. 
 ```
-git push codemason master
+$ git push codemason master
 ```
 
 You can now deploy your app:
