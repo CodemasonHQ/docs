@@ -15,10 +15,10 @@ You can find all the official craft kits within the [CodemasonHQ organisation](h
 
 Officially supported craft kits: 
 - [Laravel](https://github.com/codemasonhq/craft-kit-laravel) 
-- [Wordpress](https://github.com/codemasonhq/craft-kit-wordpress) *(beta)*
-- [Rails](https://github.com/codemasonhq/craft-kit-laravel) *(beta)*
+- [Bedrock for Wordpress](https://github.com/codemasonhq/craft-kit-bedrock) 
 
 Community contributed craft kits: 
+- [HumHub](https://github.com/benmag/craft-kit-humhub)
 - [PRs welcome](https://github.com/CodemasonHQ/docs/blob/master/craft-kits.md)
 
 <a name="custom"></a>
@@ -45,7 +45,7 @@ $ mason craft ~/path/to/my/craft-kit
 ## Creating a Craft Kit
 Craft kits are light weight javascript applications. They require one `index.js` file as an entry point which exposes the craft kit to the CLI. Beyond that, you can structure it however you see fit.
 
-A nice example is the [laravel craft kit](https://github.com/CodemasonHQ/craft-kit-laravel).
+A nice example is the [laravel craft kit](https://github.com/codemasonhq/craft-kit-laravel).
 
 ### index.js
 | Property | Description                                                                       |
