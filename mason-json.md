@@ -96,11 +96,11 @@ Specify the Docker image to start the container from. This provides the framewor
 
 <a name="mason-json-command"></a>
 ## Command
-*[string, optional]*
-The command that will run to launch and run your application. Our official buildpacks run a default command if this parameter is left empty. However, this option is available if you'd like to get your hands dirty. 
+*[string|array, optional]*
+The command that will run to launch and run your application. Our official images are have the default run command baked in, which is used if this parameter is left empty. However, the [command](https://docs.docker.com/engine/reference/builder/#cmd) option is available if you'd like to get your hands dirty.  
 ```json
 {
-    "command": "apache2 -D FOREGROUND",
+    "command": "apache2 -D FOREGROUND",  
 }
 ```
 
