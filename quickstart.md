@@ -102,16 +102,9 @@ $ mason create --application quickstart
    ✔ Added git remote codemason
 ```
 
-This command creates an application on Codemason for you, prepares a `git remote` repository to transport your code and updates the `.gitlab-ci.yml` so Codemason knows how to build your app.
+This command creates an application on Codemason for you and prepares a `git remote` repository to transport your code.
 
-
-Commit the changes to your build script:
-```
-$ git add .
-$ git commit -m "Build script"
-```
-
-Push your changes to your Codemason Git remote. This sends your code to your Codemason `git remote`. It then builds your Docker image and pushes it to the private registry, as per your build instructions in `.gitlab-ci.yml`. 
+Push your changes to your Codemason Git remote. Our GitLab CI Runner will then build your Docker image and push it to the private registry, as per your build instructions in `.gitlab-ci.yml`. 
 ```
 $ git push codemason master
 ```
