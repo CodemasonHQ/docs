@@ -114,7 +114,7 @@ Set the entrypoint for your container. The entrypoint is prefixed to any command
 }
 ```
 
-<a href="mason-json-scale"></a>
+<a name="mason-json-scale"></a>
 ## Scale
 *[integer, optional]*
 Set the number of containers to spin up.
