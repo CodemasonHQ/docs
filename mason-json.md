@@ -279,7 +279,7 @@ An array containing targets for your Load Balancer.
 ```
 [
 	{
-		'service' => "1s123",
+		'service' => "pebble/web",
 		'target' => "test.mason.ci:90/path=80"
 	}
 ]
@@ -385,7 +385,7 @@ You can even define a Load Balancer in Mason JSON.
 	],
 	"targets": [
 		{
-			"service": "1s123",
+			"service": "pebble/web",
 			"target": "test.mason.ci=80"
 		}
 	]
