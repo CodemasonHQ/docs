@@ -278,10 +278,18 @@ Through Mason JSON, you can also access your private registries and do awesome t
 An array containing targets for your Load Balancer.  
 ```
 [
-	{
-		'service' => "pebble/web",
-		'target' => "test.mason.ci:90/path=80"
-	}
+    {
+        "source": {
+            "protocol": "http",
+            "port": 80,
+            "hostname": "pebble.mason.ci",
+            "path": "/my-path",
+        },
+        "target": {
+            "service": "pebble/web",
+            "port": 80,
+        }
+    }
 ]
 ```
 
@@ -302,9 +310,9 @@ In this example, we are creating a simple PHP application and connecting it with
     "masonVersion": "v1",
     "services": [
         {
-            "name": "app",
+            "name": "web",
             "description": "Web server",
-            "image": "codemasonhq/php",
+            "image": "registry.mason.ci/benmag/pebble",
             "links": [
                 "postgres"
             ]
@@ -323,6 +331,25 @@ In this example, we are creating a simple PHP application and connecting it with
             },
         }
     ],
+    "loadbalancer": {
+        "name": "lb",
+        "ports": [
+            "80:80"
+        ],
+        "targets": [
+            {
+                "source": {
+                    "protocol": "http",
+                    "port": 80,
+                    "hostname": "pebble.mason.ci",
+                },
+                "target": {
+                    "service": "pebble/web",
+                    "port": 80,
+                }
+            },
+        ]
+    }
 }
 ```
 
@@ -374,20 +401,24 @@ You can also just define a single service in a similar fashion with one minor ad
 <a name="loadbalancer-example"></a>
 # Load Balancer JSON
 You can even define a Load Balancer in Mason JSON. 
-```
+```json
 {
-	"name": "lb",
-	"description": "My Load Balancer",
-	"type": "loadbalancer",
-	"masonVersion": "v1",
-	"ports": [
-		"80:80"
-	],
-	"targets": [
-		{
-			"service": "pebble/web",
-			"target": "test.mason.ci=80"
-		}
-	]
+    "name": "lb",
+    "description": "My Load Balancer",
+    "type": "loadbalancer",
+    "masonVersion": "v1",
+    "targets": [
+        {
+            "source": {
+                "protocol": "http",
+                "port": 80,
+                "hostname": "pebble.mason.ci",
+            },
+            "target": {
+                "service": "pebble/web",
+                "port": 80,
+            }
+        },
+    ]
 }
 ```
