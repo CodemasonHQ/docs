@@ -20,6 +20,7 @@
 
 - ##### Languages
     - [PHP](/docs/{{version}}/getting-started-with-php)
+    - [Node.js](/docs/{{version}}/getting-started-with-nodejs)
 
 - ##### Ecosystem
     - [Mason JSON reference](/docs/{{version}}/mason-json)
