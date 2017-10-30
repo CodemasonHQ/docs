@@ -14,7 +14,9 @@ Official craft kits provide an opinionated starting point for Dockerizing your a
 You can find all the official craft kits within the [CodemasonHQ organisation](https://github.com/codemasonhq) with the prefix `craft-kit-`. We aim to support as many popular frameworks, architectures and languages as possible.
 
 Officially supported craft kits: 
-- [Laravel](https://github.com/codemasonhq/craft-kit-laravel) 
+- [PHP](https://github.com/codemasonhq/craft-kit-php) 
+- [Node.js](https://github.com/codemasonhq/craft-kit-nodejs)
+- [Laravel](https://github.com/codemasonhq/craft-kit-laravel)  
 - [Bedrock for Wordpress](https://github.com/codemasonhq/craft-kit-bedrock) 
 
 Community contributed craft kits: 
