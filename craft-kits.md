@@ -7,6 +7,9 @@
 
 <a name="introduction"></a>
 ## Introduction
+> This guide assumes you have:
+> - Installed the [Mason CLI](httsp://codemason.io/docs/installation) and its dependencies
+
 Craft kits are a super flexible and portable way to define Docker environments. They are an excellent way to ease into building Docker powered apps without having to learn the ins and outs of Docker.
 
 Official craft kits provide an opinionated starting point for Dockerizing your apps. We've carefully selected and specifically created Docker images that play together nicely so you can Dockerize your apps with a single command.
@@ -50,11 +53,11 @@ Craft kits are light weight javascript applications. They require one `index.js`
 A nice example is the [laravel craft kit](https://github.com/codemasonhq/craft-kit-laravel).
 
 ### index.js
-| Property | Description                                                                       |
-| -------- | --------------------------------------------------------------------------------- |
-| name     | *[string]* Simple name for your craft kit                                         |
-| default  | *[array]* Default containers for craft kit to use                                 | 
-| masonJson | *[object]* [Mason JSON](http://mason.ci/docs/mason-json) for available containers |
+| Property | Description                                                                           |
+| -------- | --------------------------------------------------------------------------------------|
+| name     | *[string]* Simple name for your craft kit                                             |
+| default  | *[array]* Default containers for craft kit to use                                     | 
+| masonJson | *[object]* [Mason JSON](httsp://codemason.io/docs/mason-json) for available containers|
 
 ### Example index.js
 ```javascript
