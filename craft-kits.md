@@ -10,6 +10,8 @@
 > This guide assumes you have:
 > - Installed the [Mason CLI](httsp://codemason.io/docs/installation) and its dependencies
 
+You can use a Craft Kit to turn any app into a Docker app with one command (e.g. `mason craft php`), you don't even need to know Docker and and you can even swap out the services a Craft Kit uses with ease (e.g. `mason craft php --with="php, mysql"`). 
+
 Craft kits are a super flexible and portable way to define Docker environments. They are an excellent way to ease into building Docker powered apps without having to learn the ins and outs of Docker.
 
 Official craft kits provide an opinionated starting point for Dockerizing your apps. We've carefully selected and specifically created Docker images that play together nicely so you can Dockerize your apps with a single command.
