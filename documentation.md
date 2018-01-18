@@ -5,7 +5,7 @@
     - [Adding servers](/docs/{{version}}/servers)
 
 - ##### Command Line
-    - [Installation and setup](/docs/{{version}}/installation)
+    - [Installation and setup](/docs/{{version}}/mason-cli)
     - [Authentication](/docs/{{version}}/authentication)
     - [Preparing an app](/docs/{{version}}/preparing-apps)
     - [Creating an app](/docs/{{version}}/creating-apps)
