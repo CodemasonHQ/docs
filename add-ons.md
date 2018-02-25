@@ -3,7 +3,7 @@
 - [Introduction](#introduction)
 - [Add from the catalog](#add-from-catalog)
 - [The custom category](#custom)
-- [Speical catalog items](#special)
+- [Special catalog items](#special)
 
 <a name="introduction"></a>
 ## Introduction
@@ -21,7 +21,7 @@ When you click "Launch" you will be taken to the service editor where you can co
 ## The custom category
 Within the add-on catalog there is a special category for custom services. Items within the custom category relate to getting your code or services you've built somewhere else onto your server. 
 
-For example, if you were wanting to package your code into a container to run your application, you would launch a Codemason Git service. Or if you had an image built elsewhere, you would launch a Docker service. 
+For example, if you had an image built elsewhere that you want to run as a service in your app, you would launch a Docker service. 
 
 <a name="special"></a>
 ## Special catalog items
