@@ -6,15 +6,15 @@
 
 <a name="introduction"></a>
 ## Introduction
-On Codemason, an application is simply a collection of services. 
+We measure our success by how easily users can deploy, manage and run their PHP, Node.js, Python, Ruby, Java Clojure, Scala, Go or Docker apps.
 
-For example, an application for running a simple Laravel project powered by a MySQL database would contain two services. One service for the Laravel project called `web` and another service for the MySQL database called `database`.
+On Codemason, every app comes with `git push` deployments via Codemason Git, automated builds and a private image on our Docker registry. Beyond pushing your code, there's not much else for you to worry about. 
 
-The create command is opinionated. 
+Each app is simply a collection of services.
 
-In addition to creating an application on Codemason, it will also create a new Codemason Git service so you can deploy your code to Codemason. The end result is the same as creating a Codemason Git service from the catalog and following the setup steps.
+For example, an app for running a simple Laravel project powered by a MySQL database would contain two services. One service for the Laravel project called `web` and another service for the MySQL database called `db`.
 
-When you run the create command, it will prompt you for any information it needs.
+Apps can be created via the dashboard or the [Mason CLI](https://codemason.io/docs/mason-cli). When you run the create command, it will prompt you for any information it needs.
 ```
 $ mason create 
 
@@ -38,9 +38,14 @@ $ mason create --application pebble --service laravel --path /Users/git/pebble
 ## Behind the scenes 
 Naming things can often be more painful than it really should be, so when you run the create command, the CLI will suggest a randomly generated name for you.
 
-Once you have filled out all relevant information, the CLI will create a git remote pointing to the Codemason Git repository that was created.
+Once you have filled out all relevant information, the CLI will create a `git remote` pointing to the Codemason Git repository that was created. This is how you sync your code to Codemason.
 
 Now when you push your code to the Codemason Git remote (`git push codemason master`), it is picked up by our GitLab CI Runner and runs the build instructions in your `.gitlab-ci.yml` file.
+
+Your app will be built into a Docker image and pushed to our private Docker registry. This is all automatic and requires no extra work from you. The image address is available via the Deploy tab of your app and follows the format:
+```
+registry.mason.ci/<team-slug>/<app-name>
+```
 
 <a name="git-remote"></a>
 ## Your Git remote 
