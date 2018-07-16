@@ -24,12 +24,25 @@ This will trigger our CI runners and build an image with your changes in it as p
 
 <a name="upgrading"></a>
 ## Upgrading 
-Run the `upgrade` command to update an existing application. Be sure to specify the service you wish to upgrade in the following format `application/service`
+Run the `services:upgrade` command to update an existing application. Be sure to specify the service you wish to upgrade in the following format `application/service`
 ```
-$ mason upgrade pebble/app
+$ mason services:upgrade pebble/web 
+
+Upgrading service on Codemason... Done
 ```
 
-Codemason will upgrade your application. From the Codemason Web UI, you will be able to finish the upgrade if you are happy with or rollback if you are not.
+Codemason will upgrade your application. If you are satisfied with your changes you can `finish` the upgrade
+```
+$ mason services:upgrade pebble/web --finish
+```
+
+If you are not happy with your upgrade, you can `rollback`
+```
+$ mason services:upgrade pebble/web --rollback
+```
+
+Additionally, you may `--cancel` upgrades and `--cancel-rollbacks` if required.
+
 
 <a name="next-steps"></a>
 ## Next steps

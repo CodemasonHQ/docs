@@ -3,7 +3,7 @@
 - [Introduction](#introduction)
 - [Setup](#setup)
 - [Development environment](#development-environment)
-- [Deploy dreams](#deploy-dreams)
+- [Deploy your app](#deploy)
 - [Updating your app](#updating-your-app)
 
 <a name="introduction"></a>
@@ -41,6 +41,11 @@ Codemason leverages the power of Docker throughout an application's lifecycle. T
 With the Mason CLI, you can Dockerize your apps with a single command which generates the Docker files required and adds them to the current working directory
 ```
 $ mason craft nodejs
+
+Crafting nodejs application with nodejs
+... Wrote Dockerfile
+... Wrote docker-compose.yml
+... Wrote .gitlab-ci.yml
 ```
 
 Commit our new Docker files to source control
@@ -58,23 +63,18 @@ Your application will now be running at `http://<docker-ip>`
 
 > We recommend using [Kitematic](https://kitematic.com/), as it provides an intuitive user interface for running Docker containers.
 
-<a name="deploy-dreams"></a>
-## Deploy dreams
+<a name="deploy"></a>
+## Deploy your app
 Developer experience is our top priority. Everything we do is about solving the problems that interrupt your flow and distract you from focusing on what counts, building great apps.
 
 First, use the `create` command to create a Codemason application. The CLI suggest default values, but you can override them as required.
 ```
-$ mason create --application getting-started-nodejs
+$ mason create getting-started-nodejs
 
-   Creating application on Codemason...
-
-⁣     Application name (getting-started-nodejs)
-⁣         Service name (app)
-⁣         Service path (/Users/ben/getting-started-nodejs)
-
-   ✔ Created application
-   ✔ Created remote repository
-   ✔ Added git remote codemason
+Creating app on Codemason...
+ ... Created application
+ ... Created remote repository
+ ... Added git remote codemason
 ```
 
 This command creates an application on Codemason for you and prepares a `git remote` repository to transport your code.
@@ -86,20 +86,15 @@ $ git push codemason master
 
 You can now deploy your app:
 ```
-$ mason deploy --to getting-started-nodejs
+$ mason services:create getting-started-nodejs/web -p 80:80 --env-file .env
 
-   Deploying application to Codemason...
+Creating service on Codemason...... done
 
-      Uploading [====================] 100% 0.0s
-       Building [====================] 100% 0.0s, ✔ passed
-      Launching [====================] 100% 0.0s
-
-     *´¨)
-    ¸.•´ ¸.•*´¨) ¸.•*¨)
-   (¸.•´ (¸.•` ¤ Application deployed and running
+    NAME     IMAGE                                         COMMAND     PORTS
+    web      registry.mason.ci/benm/getting-started-nodejs             80:80
 ```
 
-The `deploy` command posts [Mason JSON](/docs/{{version}}/mason-json) to our [API](/docs/{{version}}/api) which spins up your app on your server for you.
+These commands posts [Mason JSON](/docs/{{version}}/mason-json) to our [API](/docs/{{version}}/api) which spins up your service on your server for you.
 
 <a name="updating-your-app"></a>
 ## Updating your app
@@ -130,5 +125,7 @@ $ git push codemason master
 
 Run the upgrade command. Be sure to specify the service you wish to upgrade in the following format `application/service`.
 ```
-$ mason upgrade getting-started-nodejs/app
+$ mason services:upgrade getting-started-nodejs/web 
+
+Upgrading service on Codemason... Done
 ```

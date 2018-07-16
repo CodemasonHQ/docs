@@ -8,7 +8,7 @@
 <a name="introduction"></a>
 ## Introduction
 > This guide assumes you have:
-> - Installed the [Mason CLI](httsp://codemason.io/docs/installation) and its dependencies
+> - Installed the [Mason CLI](https://codemason.io/docs/installation) and its dependencies
 
 You can use a Craft Kit to turn any app into a Docker app with one command (e.g. `mason craft php`), you don't even need to know Docker and and you can even swap out the services a Craft Kit uses with ease (e.g. `mason craft php --with="php, mysql"`). 
 
@@ -26,7 +26,7 @@ Officially supported craft kits:
 
 Community contributed craft kits: 
 - [HumHub](https://github.com/benmag/craft-kit-humhub)
-- [PRs welcome](https://github.com/CodemasonHQ/docs/blob/master/craft-kits.md)
+- PRs welcome
 
 <a name="custom"></a>
 ## Custom Craft Kits

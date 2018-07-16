@@ -36,13 +36,10 @@ Once you've installed the CLI, you will be able to login to your Codemason accou
 ```
 $ mason login
 
-   Please login or create an account by entering an email and password:
-
-          Site: https://mason.ci
-         Email: git@bmagg.com
-      Password: *********
-
-   ✔ Login successful
+Login to your Codemason account
+Email: git@bmagg.com
+Password: ********
+Logged in as git@bmagg.com
 ```
 
 <a name="build-something-amazing"></a>
@@ -66,6 +63,11 @@ Codemason leverages the power of Docker throughout an application's lifecycle. T
 With the Mason CLI, you can Dockerize your apps with a single command which generates the Docker files required and adds them to the current working directory
 ```
 $ mason craft laravel
+
+Crafting laravel application with php, mysql
+... Wrote Dockerfile
+... Wrote docker-compose.yml
+... Wrote .gitlab-ci.yml
 ```
 
 Commit our new Docker files to source control
@@ -89,17 +91,12 @@ Developer experience is our top priority. Everything we do is about solving the 
 
 First, use the `create` command to create a Codemason application. The CLI suggest default values, but you can override them as required.
 ```
-$ mason create --application quickstart
+$ mason create quickstart
 
-   Creating application on Codemason...
-
-⁣     Application name (quickstart)
-⁣         Service name (web)
-⁣         Service path (/Users/ben/quickstart)
-
-   ✔ Created application
-   ✔ Created remote repository
-   ✔ Added git remote codemason
+Creating app on Codemason...
+ ... Created application
+ ... Created remote repository
+ ... Added git remote codemason
 ```
 
 This command creates an application on Codemason for you and prepares a `git remote` repository to transport your code.
@@ -111,20 +108,29 @@ $ git push codemason master
 
 You can now deploy your app:
 ```
-$ mason deploy --to quickstart
+$ mason services:create getting-started-php/web -p 80:80 --env-file .env
 
-   Deploying application to Codemason...
+Creating service on Codemason...... done
 
-      Uploading [====================] 100% 0.0s
-       Building [====================] 100% 0.0s, ✔ passed
-      Launching [====================] 100% 0.0s
-
-     *´¨)
-    ¸.•´ ¸.•*´¨) ¸.•*¨)
-   (¸.•´ (¸.•` ¤ Application deployed and running at hello-world-1234.mason.ci
+    NAME     IMAGE                               COMMAND     PORTS
+    web      registry.mason.ci/benm/quickstart               80:80
 ```
 
-The `deploy` command posts [Mason JSON](/docs/{{version}}/mason-json) to our [API](/docs/{{version}}/api) which spins up your app on your server for you.
+And now your database:
+```
+mason services:create pebble/db --image mariadb -p 3306:3306 \
+	--env MYSQL_DATABASE=pebble \
+	--env MYSQL_USER=demo \
+	--env MYSQL_PASSWORD=secret \
+	--env MYSQL_ROOT_PASSWORD=supersecret 
+	
+Creating service on Codemason...... done
+
+	    NAME     IMAGE                    COMMAND     PORTS
+        db       mariadb                              3306:3306
+```
+
+These commands posts [Mason JSON](/docs/{{version}}/mason-json) to our [API](/docs/{{version}}/api) which spins up your service on your server for you.
 
 <a name="updating-your-app"></a>
 ## Updating your app
@@ -144,5 +150,7 @@ $ git push codemason master
 
 Run the upgrade command. Be sure to specify the service you wish to upgrade in the following format `application/service`.
 ```
-$ mason upgrade quickstart/web
+$ mason services:upgrade quickstart/web 
+
+Upgrading service on Codemason... Done
 ```

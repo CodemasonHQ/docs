@@ -13,10 +13,10 @@ If you are unfamiliar with the architecture of a Codemason application, you can 
 
 <a name="cli-support"></a>
 ## Codemason CLI support
-By default the Codemason CLI will use the `development` environment. You may provide specify an environment with the `--environment` flag. 
+By default the Codemason CLI will use the `development` environment. You may provide an environment with the `--environment` flag. 
 
 ```
-$ mason deploy --to pebble --environment production
+$ mason create pebble --environment production
 ```
 
 <a name="next-steps"></a>

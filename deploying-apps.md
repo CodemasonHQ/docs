@@ -2,27 +2,75 @@
 
 - [Introduction](#introduction)
 - [Deployment](#deployment)
+  - [Quick deploy](#quick-deploy)
+  - [Deploy services individually (recommended)](#deploy-individually)
 - [Next steps](#next-steps)
 
 <a name="introduction"></a>
 ## Introduction
-By this stage you will have already prepared your app by initialising your git repository, created your application and prepared your Codemason git remote with the create command. 
-
-Pushing your code to the Codemason git remote will trigger our CI Runner. This will run the build instructions in you `.gitlab-ci.yml` file. 
+By this stage you will have already [created your app](/docs/{{version}}/creating-apps) and pushed your code, triggering the CI runner.
 
 
 <a name="deployment"></a>
 ## Deployment 
-Deploy your application to your server with the `deploy` command and the application you wish to deploy to as a parameter. 
+<a name="quick-deploy"></a>
+### Quick deploy
+Use the `deploy` command to quickly deploy your entire app to Codemason in one command. 
 ```
-$ mason deploy --to applicationName 
+$ mason deploy pebble
 ```
 
-Committing and pushing your code to the Codemason Git remote gets it built into a Docker image, while deploying it puts it on your server for use.  
+This will read your `docker-compose.yml` file and create the corresponding services on Codemason.
 
-When you are ready to actually spin up the services your application will use on your server, you can do that via the Codemason Web UI or the `deploy` command. 
+By default the command will attempt to the `.env` file, if available and pass them as environment variables to the deployment. You can change the env file it loads by setting the `--env-file` flag or disable loading an env file by setting the `--no-env-file` flag.
 
-The `deploy` command will also fire a `git push codemason master` for you, so you can be sure your latest changes have been built into the image.  
+<a name="deploy-individually"></a>
+### Deploy services individually 
+You can also deploy individual services using the `services:create ` command. This approach is recommended as it gives you the most control over your deployment.
+
+```
+USAGE
+  $ mason services:create SERVICE
+
+ARGUMENTS
+  SERVICE  service to create formatted as `<app>/<service>`
+
+OPTIONS
+  -c, --command=command          command for service to run
+  -e, --environment=environment  [default: development] the environment to access
+  -i, --image=image              image for service to run
+  -l, --link=link                link to another service
+  -p, --port=port                ports to define on service
+  -v, --volume=volume            volume to mount on service
+  --env=env                      env variable available to the service
+  --env-file=env-file            path to env file to load
+
+```
+The `services:create` command is extremely easy to use due to it's expressive nature. If no `--image` flag is provided, the app image will be used.
+
+```
+$ mason services:create pebble/web -p 80:80 --env-file .env
+
+Creating service on Codemason...... done
+
+    NAME     IMAGE                                        COMMAND     PORTS
+    web      registry.mason.ci/benm/pebble                 80:80
+```
+
+The CLI is capable of creating complex services, just like you can via the Codemason UI.
+```
+$ mason services:create pebble/db --image mariadb -p 3306:3306 \
+	--env MYSQL_DATABASE=pebble \
+	--env MYSQL_USER=demo \
+	--env MYSQL_PASSWORD=secret \
+	--env MYSQL_ROOT_PASSWORD=supersecret
+	
+	Creating service on Codemason...... done
+
+    NAME     IMAGE       COMMAND     PORTS
+    db       mariadb                 3306:3306
+```
+
 
 <a name="next-steps"></a>
 ## Next steps
