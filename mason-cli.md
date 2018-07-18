@@ -23,3 +23,9 @@ Dependencies: NodeJS, Git, Docker
 <a name="updating"></a>
 ## Updating the CLI
 The Mason CLI will automatically update when changes are released. 
+
+## Commands
+A list of available commands can be accessed via the `help` command or on the [Mason CLI repo](https://github.com/codemasonhq/mason-cli#commands)
+```
+$ mason help
+```
