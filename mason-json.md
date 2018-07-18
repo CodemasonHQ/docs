@@ -1,4 +1,4 @@
-# Introduction
+# Mason JSON
 
 - [Mason JSON Reference](#mason-json-reference)
   - [Name](#mason-json-name)
