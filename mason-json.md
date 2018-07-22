@@ -419,6 +419,10 @@ You can even define a Load Balancer in Mason JSON.
                 "port": 80,
             }
         },
-    ]
+    ],
+    "certificates": {
+        "default": "1c1",
+        "additional": ["1c2", "1c3"]
+    },
 }
 ```
