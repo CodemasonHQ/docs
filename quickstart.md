@@ -122,7 +122,8 @@ mason services:create pebble/db --image mariadb -p 3306:3306 \
 	--env MYSQL_DATABASE=pebble \
 	--env MYSQL_USER=demo \
 	--env MYSQL_PASSWORD=secret \
-	--env MYSQL_ROOT_PASSWORD=supersecret 
+	--env MYSQL_ROOT_PASSWORD=supersecret \
+	--volume /home/data/mysql/data:/var/lib/mysql
 	
 Creating service on Codemason...... done
 
