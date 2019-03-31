@@ -1,7 +1,7 @@
 # Application architecture
 
 - [Introduction](#introduction)
-- [What are Environments](#environments)
+- [What is a Team](#teams)
 - [What is an Application](#applications)
 - [What is a Service](#services)
 
@@ -12,11 +12,11 @@ There's too much duct tape and chewing gum keeping our applications online... Co
 
 Applications on Codemason are normal Docker applications, we just abstract away a lot of the tedious work that goes into running and managing them. Our focus has been to make sure that anyone can use Codemason even without experience using Docker before. 
 
-<a name="environments"></a>
-## What are Environments? 
-An environment is a logical way to group certain things together and keep other things separate. Typically environments are used to enforce separation between development, staging and production. Inside an environment you can create, run and manage your applications. 
+<a name="teams"></a>
+## What is a Team? 
+A team is a logical way to group certain things together and keep other things separate. Typically teams are used to enforce strong separation between projects. Inside an team you can create, run and manage your applications. 
 
-All servers, applications and services are belong to their environment. Multiple servers can be added to the same environment to form a cluster. This allows you to pool the resources of multiple servers to create a setup that's more resistant to failure. Once you're running a cluster, Codemason will orchestrate what gets run where for you automatically. 
+All servers, applications and services are belong to a team. Multiple servers can be added to the same team to form a cluster. This allows you to pool the resources of multiple servers to create a setup that's more resistant to failure. Once you're running a cluster, Codemason will orchestrate what gets run where for you automatically. 
 
 <a name="applications"></a>
 ## What is an Application? 

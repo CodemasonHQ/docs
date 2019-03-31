@@ -12,7 +12,7 @@
 ## Introduction
 When it comes to scaling there are two ways to do it: horizontal and vertical. Vertical scaling involves simply increasing the capacity of your server to cope with the load. Horizontal scaling is the process of adding more servers and distributing the load across them.
 
-Codemason handles horizontal scaling with ease — when you add multiple servers to an environment, they form a cluster. When you add a Load Balancer to that cluster, you can scale your applications and make them resilient to failure.
+Codemason handles horizontal scaling with ease — when you add multiple servers to a team, they form a cluster. When you add a Load Balancer to that cluster, you can scale your applications and make them resilient to failure.
 
 This document will step you through setting your application up so it can be scaled successfully. 
 
@@ -35,7 +35,7 @@ In order to successfully scale your service, ensure the following:
 ## Creating a Load Balancer
 Creating a Load Balancer through the Codemason Web UI is a great experience. Simply go to the catalog, find the Load Balancer item, click "Add to Application" and launch it. 
 
-The catalog will then step you through creating your Load Balancer. It's suggested you only use one Load Balancer per environment unless there is a specific need for multiple.
+The catalog will then step you through creating your Load Balancer. It's suggested you only use one Load Balancer per team unless there is a specific need for multiple.
 
 <a name="listening-ports"></a>
 ### Listening ports
