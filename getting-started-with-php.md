@@ -96,7 +96,7 @@ Creating service on Codemason...... done
 
 And now your database:
 ```
-mason services:create pebble/db --image mariadb -p 3306:3306 \
+mason services:create getting-started-php/db --image mariadb -p 3306:3306 \
 	--env MYSQL_DATABASE=pebble \
 	--env MYSQL_USER=demo \
 	--env MYSQL_PASSWORD=secret \
