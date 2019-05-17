@@ -26,4 +26,5 @@
     - [Mason JSON reference](/docs/{{version}}/mason-json)
     - [API Reference](/docs/{{version}}/api)
     - [Add-on Catalog](/docs/{{version}}/add-ons)
+    - [Deploy button](/docs/{{version}}/deploy-button)
     - [Craft kits](/docs/{{version}}/craft-kits)
