@@ -25,6 +25,7 @@ Here's an example of a deploy button for a sample PHP app:
 
 [![Deploy](https://codemason.io/img/deploy.svg)](https://codemason.io/apps/create?template=https://github.com/benmag/slack-invite-automation/)
 
+[Learn more about adding the Codemason button](#adding-the-codemason-button)
 
 <a name="requirements"></a>
 ## Requirements 
