@@ -2,7 +2,7 @@
 
 - [Introduction](#introduction)
 - [Setup](#setup)
-- [Development environment](#development-environment)
+- [Prepare your app](#prepare)
 - [Deploy your app](#deploy)
 - [Updating your app](#updating-your-app)
 
@@ -19,55 +19,41 @@ This guide will walk you through a successful deployment of a PHP application wi
 
 <a name="setup"></a>
 ## Setup
-Start by pulling a copy of our demo PHP project. 
+Start by installing the [Mason CLI](/docs/{{version}}/mason-cli). You can use the CLI to manage and deploy your apps, view application logs and run your apps locally.
+
+Install the Mason CLI
+```
+$ npm install --global codemason
+```
+
+With the Mason CLI installed, you will be able to use the `mason` command from your command line.
+
+Use the `mason login` command to log in to Codemason: 
+```
+$ mason login
+```
+
+<a name="prepare"></a>
+## Prepare your app
+Let's prepare an app to deploy!
+
+If you're new to Codemason, we recommend using our sample PHP app to complete this tutorial. However, if you want to deploy an existing app, see [this guide](/docs/{{version}}/preparing-apps) for preparing your codebase for Codemason deployment.
+
+Start by pulling a copy of our demo PHP project. This is just a simple quote rotator app. Every time you load the page, it will randomly select a quote from an array and display it.
 ```
 $ git clone https://github.com/CodemasonHQ/getting-started-php
 $ cd getting-started-php
 ```
 
-This is just a simple quote rotator app. Every time you load the page, it will randomly select a quote from an array and display it.
-
-You will also need to install dependencies with Composer
-```
-$ composer install
-```
-
-<a name="development-environment"></a>
-## Development environment
-Codemason leverages the power of Docker throughout an application's lifecycle. This way, you and your team can be confident that your code will run right every time.
-
-> You don't need to be a Docker expert to use Codemason.
-
-With the Mason CLI, you can Dockerize your apps with a single command which generates the Docker files required and adds them to the current working directory
-```
-$ mason craft laravel
-
-Crafting laravel application with php, mysql
-... Wrote Dockerfile
-... Wrote docker-compose.yml
-... Wrote .gitlab-ci.yml
-```
-
-Commit our new Docker files to source control
-```
-$ git add .
-$ git commit -m "Docker"
-```
-
-Now we've Dockerized our application, it's time to spin up our development environment (add the `-d` flag to the command to run in detached mode)
-```
-$ docker-compose up
-```
-
-Your application will now be running at `http://<docker-ip>`
-
-> We recommend using [Kitematic](https://kitematic.com/), as it provides an intuitive user interface for running Docker containers.
+You now have a git repository that contains our sample PHP app as well as a `Dockerfile` and `.gitlab-ci.yml` file. These files tell Codemason how to build and run your PHP app. 
 
 <a name="deploy"></a>
 ## Deploy your app
-Developer experience is our top priority. Everything we do is about solving the problems that interrupt your flow and distract you from focusing on what counts, building great apps.
+Now it's time to deploy our app to Codemason.
 
-First, use the `create` command to create a Codemason application. The CLI suggest default values, but you can override them as required.
+At Codemason, developer experience is our top priority. Everything we do is about solving the problems that interrupt your flow and distract you from focusing on what counts, building great apps.
+
+First, use the `mason create` command to create a Codemason app. The CLI suggest default values, but you can override them as required.
 ```
 $ mason create getting-started-php
 
@@ -77,9 +63,9 @@ Creating app on Codemason...
  ... Added git remote codemason
 ```
 
-This command creates an application on Codemason for you and prepares a `git remote` repository to transport your code.
+This command creates an app and prepares Codemason to receive your code.
 
-Push your changes to your Codemason Git remote. Our GitLab CI Runner will then build your Docker image and push it to the private registry, as per your build instructions in `.gitlab-ci.yml`.
+Push your changes to your Codemason Git remote. Our GitLab CI Runner will then build your Docker image and push it to the private registry, as per the build instructions in `.gitlab-ci.yml`.
 ```
 $ git push codemason master
 ```
