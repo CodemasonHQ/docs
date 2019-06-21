@@ -14,7 +14,7 @@ You can use a Craft Kit to turn any app into a Docker app with one command (e.g.
 
 Craft kits are a super flexible and portable way to define Docker environments. They are an excellent way to ease into building Docker powered apps without having to learn the ins and outs of Docker.
 
-Official craft kits provide an opinionated starting point for Dockerizing your apps. We've carefully selected and specifically created Docker images that play together nicely so you can Dockerize your apps with a single command.
+Official craft kits provide an opinionated starting point for Dockerizing your apps - they work great in [local development](/docs/{{version}}/local-development) and for [deploying](/docs/{{version}}/deploying-apps). We've carefully selected and specifically created Docker images that play together nicely so you can Dockerize your apps with a single command.
 
 You can find all the official craft kits within the [CodemasonHQ organisation](https://github.com/codemasonhq) with the prefix `craft-kit-`. We aim to support as many popular frameworks, architectures and languages as possible.
 
