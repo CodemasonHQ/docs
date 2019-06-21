@@ -52,7 +52,7 @@ $ mason create hello-world --remote production
 
 If you wish to prevent the CLI from adding a git remote, you can disable it by setting the `--no-remote` flag.
 ```
-$mason create hello-world --no-remote
+$ mason create hello-world --no-remote
 ```
 
 When you push your code to the git remote (`git push codemason master`), it fires the GitLab CI Runner which runs your tests defined in your `.gitlab-ci.yml`. The build trace will be logged to your terminal. The resulting image is pushed to the Codemason Docker registry and will be automatically available for you to use. 
