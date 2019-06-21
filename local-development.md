@@ -44,3 +44,5 @@ $ docker-compose up
 That's all! You're now running your Laravel application with Docker!
 
 You'll be able to access your application at `http://<docker-ip>`, where `<docker-ip>` is the boot2docker ip or localhost if you are running Docker natively.
+
+> We also recommend using [Kitematic](https://kitematic.com/), as it provides an intuitive user interface for running Docker containers.
