@@ -28,12 +28,12 @@ All in under 5 minutes!
 <a name="setup"></a>
 ## Setup
 Before we can get started, you will need to install the Mason CLI. The Mason CLI is distributed through NPM so installation is easy
-```
+```bash
 $ npm install codemason --global
 ```
 
 Once you've installed the CLI, you will be able to login to your Codemason account
-```
+```bash
 $ mason login
 
 Login to your Codemason account
@@ -45,7 +45,7 @@ Logged in as git@bmagg.com
 <a name="build-something-amazing"></a>
 ## Build something amazing
 Now it's time to write some code. For simplicity, we've prepared a simple little starter application for you which you can just clone to get started.
-```
+```bash
 $ git clone https://github.com/CodemasonHQ/getting-started-php quickstart
 $ cd quickstart
 ```
@@ -61,7 +61,7 @@ Codemason leverages the power of Docker throughout an application's lifecycle. T
 > You don't need to be a Docker expert to use Codemason.
 
 With the Mason CLI, you can Dockerize your apps with a single command which generates the Docker files required and adds them to the current working directory
-```
+```bash
 $ mason craft laravel
 
 Crafting laravel application with php, mysql
@@ -71,13 +71,13 @@ Crafting laravel application with php, mysql
 ```
 
 Commit our new Docker files to source control
-```
+```bash
 $ git add .
 $ git commit -m "Docker"
 ```
 
 Now we've Dockerized our application, it's time to spin up our development environment (add the `-d` flag to the command to run in detached mode)
-```
+```bash
 $ docker-compose up
 ```
 
@@ -90,7 +90,7 @@ Your application will now be running at `http://<docker-ip>`
 Developer experience is our top priority. Everything we do is about solving the problems that interrupt your flow and distract you from focusing on what counts, building great apps.
 
 First, use the `create` command to create a Codemason application. The CLI suggest default values, but you can override them as required.
-```
+```bash
 $ mason create quickstart
 
 Creating app on Codemason...
@@ -102,12 +102,12 @@ Creating app on Codemason...
 This command creates an application on Codemason for you and prepares a `git remote` repository to transport your code.
 
 Push your changes to your Codemason Git remote. Our GitLab CI Runner will then build your Docker image and push it to the private registry, as per your build instructions in `.gitlab-ci.yml`. 
-```
+```bash
 $ git push codemason master
 ```
 
 You can now deploy your app:
-```
+```bash
 $ mason services:create getting-started-php/web -p 80:80 --env-file .env
 
 Creating service on Codemason...... done
@@ -117,8 +117,8 @@ Creating service on Codemason...... done
 ```
 
 And now your database:
-```
-mason services:create pebble/db --image mariadb -p 3306:3306 \
+```bash
+$ mason services:create pebble/db --image mariadb -p 3306:3306 \
 	--env MYSQL_DATABASE=pebble \
 	--env MYSQL_USER=demo \
 	--env MYSQL_PASSWORD=secret \
@@ -140,17 +140,17 @@ Updating your app is just as easy the `upgrade` command.
 Simply modify your application as you would normally.
 
 Then add the modified files to git
-```
+```bash
 $ git add .
 ```
 Commit and push the changes
-```
+```bash
 $ git commit -m "Update app"
 $ git push codemason master
 ```
 
 Run the upgrade command. Be sure to specify the service you wish to upgrade in the following format `application/service`.
-```
+```bash
 $ mason services:upgrade quickstart/web 
 
 Upgrading service on Codemason... Done

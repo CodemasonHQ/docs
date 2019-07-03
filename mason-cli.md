@@ -14,7 +14,7 @@ With the Mason CLI, we also introduced [Craft kits](/docs/{{version}}/craft-kits
 ## Installing the CLI 
 Install the Mason CLI as a global NPM package
 
-```
+```bash
 $ npm install --global codemason
 ```
 
@@ -26,6 +26,6 @@ The Mason CLI will automatically update when changes are released.
 
 ## Commands
 A list of available commands can be accessed via the `help` command or on the [Mason CLI repo](https://github.com/codemasonhq/mason-cli#commands)
-```
+```bash
 $ mason help
 ```

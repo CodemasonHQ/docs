@@ -15,7 +15,7 @@ If you are unfamiliar with the architecture of a Codemason application, you can 
 ## Codemason CLI support
 By default the Codemason CLI will use the `development` environment. You may provide an environment with the `--environment` flag. 
 
-```
+```bash
 $ mason create pebble --environment production
 ```
 

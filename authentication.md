@@ -16,27 +16,27 @@ When you login, the CLI will obtain an API token. This API token is used to auth
 <a name="authentication-with-the-cli"></a>
 ## Authenticating with the CLI
 Sign in to Codemason account with the `login` command. The CLI will prompt you for your Codemason email and password. 
-```
+```bash
 $ mason login
 ```
 
 <a name="retrieve-current-user"></a>
 ## Retrieving current user
 You can retrieve information about the currently logged in user with the `whoami` command. 
-```
+```bash
 $ mason whoami 
 ```
 
 <a name="retrieve-your-api-token"></a>
 ## Retrieving your API token 
 Retrieve the API token the CLI is using to authenticate your requests 
-```
+```bash
 $ mason token 
 ```
 
 <a name="logging-out"></a>
 ## Logging out
 You can easily sign out of your Codemason account with the `logout` command 
-```
+```bash
 $ mason logout 
 ```

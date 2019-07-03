@@ -31,7 +31,7 @@ Community contributed craft kits:
 <a name="custom"></a>
 ## Custom Craft Kits
 While we recommend the official craft kits for simplicity and compatibility with what we have planned, custom craft kits give you an added level of flexibility. Anyone can create a craft kit and use it with: 
-```
+```bash
 $ mason craft username/repo
 ```
 Where `username/repo` is the short hand for the repository to retrieve. 
@@ -44,7 +44,7 @@ By default it will use the `master` branch, but you can specify a branch or a ta
 <a name="local"></a>
 ## Local Craft Kits
 You may also use a local craft kit.
-```
+```bash
 $ mason craft ~/path/to/my/craft-kit
 ```
 

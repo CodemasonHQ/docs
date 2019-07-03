@@ -259,7 +259,7 @@ Define links to other services. Define a link in the following format, `applicat
 Through Mason JSON, you can also access your private registries and do awesome things *privately*.
 
 ### Example
-```
+```json
 {
     "registries": [
         {
@@ -276,7 +276,7 @@ Through Mason JSON, you can also access your private registries and do awesome t
 ## Targets
 *[array, optional]*
 An array containing targets for your Load Balancer.  
-```
+```json
 [
     {
         "source": {

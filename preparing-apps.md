@@ -10,14 +10,14 @@
 Codemason relies heavily on Git, a popular version control system. Before you can deploy your codebase with Codemason, it must be a Git repository. 
 
 You can initialise a git repository in the current folder by running:
-```
+```bash
 $ git init
 ```
 
 Once initialised, you can add and commit your files with 
-```
-git add .
-git commit -m "Creating my first Codemason app"
+```bash
+$ git add .
+$ git commit -m "Creating my first Codemason app"
 ```
 
 Learn more about Git
@@ -32,7 +32,7 @@ Every Codemason app has it's own Codemason Git repository. You can deploy new ve
 
 The `mason create` command will create a new empty app on Codemason and a corresponding empty Codemason Git repository for your app. The Codemason Git repo will be automatically added as a remote in your local repository.
 
-```
+```bash
 $ mason create pebble
 
 Creating app on Codemason...
@@ -42,7 +42,7 @@ Creating app on Codemason...
 ```
 
 Confirm that a remote named `codemason` has been set with the `git remote` command
-```
+```bash
 $ git remote -v
 codemason	git@git.mason.ci:my-team/pebble (fetch)
 codemason	git@git.mason.ci:my-team/pebble (push)
@@ -50,7 +50,7 @@ codemason	git@git.mason.ci:my-team/pebble (push)
 
 ### For an existing app
 If you have already created a Codemason app, you can easily add a remote to your local repo with the `mason git:remote` command
-```
+```bash
 $ mason git:remote pebble
 ```
 
@@ -90,7 +90,7 @@ FROM codemasonhq/php
 [Learn more about Dockerfile](https://docs.docker.com/engine/reference/builder/)
 
 Remember to commit these new files to source control
-```
+```bash
 $ git add .
 $ git commit -m "Preparing codebase for Codemason"
 ```

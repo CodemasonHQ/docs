@@ -65,7 +65,7 @@ Here's a sample `mason.json` file
 It is a good idea to test your Mason JSON to ensure it is working as you expect.
 
 You can do this via Codemason:
-```
+```text
 https://codemason.io/apps/create?template=https://github.com/codemasonhq/getting-started-php
 ```
 

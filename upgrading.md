@@ -9,13 +9,13 @@
 By this stage, you will have already seen how easy it is to deploy an application Codemason. Now we'll show you just how easy it is to push your changes to Codemason an upgrade your app.
 
 Simply modify your application as you would normally and ensure you add the modified files to git
-```
+```bash
 $ git add .
 $ git commit -m "Update app"
 ```
 
 Then push it to the Codemason Git remote
-```
+```bash
 $ git push codemason master
 ```
 
@@ -25,19 +25,19 @@ This will trigger our CI runners and build an image with your changes in it as p
 <a name="upgrading"></a>
 ## Upgrading 
 Run the `services:upgrade` command to update an existing application. Be sure to specify the service you wish to upgrade in the following format `application/service`
-```
+```bash
 $ mason services:upgrade pebble/web 
 
 Upgrading service on Codemason... Done
 ```
 
 Codemason will upgrade your application. If you are satisfied with your changes you can `finish` the upgrade
-```
+```bash
 $ mason services:upgrade pebble/web --finish
 ```
 
 If you are not happy with your upgrade, you can `rollback`
-```
+```bash
 $ mason services:upgrade pebble/web --rollback
 ```
 

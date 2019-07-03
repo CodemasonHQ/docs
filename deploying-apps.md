@@ -16,7 +16,7 @@ By this stage you will have already [created your app](/docs/{{version}}/creatin
 <a name="quick-deploy"></a>
 ### Quick deploy
 Use the `deploy` command to quickly deploy your entire app to Codemason in one command. 
-```
+```bash
 $ mason deploy pebble
 ```
 
@@ -26,9 +26,9 @@ By default the command will attempt to the `.env` file, if available and pass th
 
 <a name="deploy-individually"></a>
 ### Deploy services individually 
-You can also deploy individual services using the `services:create ` command. This approach is recommended as it gives you the most control over your deployment.
+You can also deploy individual services using the `services:create` command. This approach is recommended as it gives you the most control over your deployment.
 
-```
+```text
 USAGE
   $ mason services:create SERVICE
 
@@ -48,7 +48,7 @@ OPTIONS
 ```
 The `services:create` command is extremely easy to use due to it's expressive nature. If no `--image` flag is provided, the app image will be used.
 
-```
+```bash
 $ mason services:create pebble/web -p 80:80 --env-file .env
 
 Creating service on Codemason...... done
@@ -58,7 +58,7 @@ Creating service on Codemason...... done
 ```
 
 The CLI is capable of creating complex services, just like you can via the Codemason UI.
-```
+```bash
 $ mason services:create pebble/db --image mariadb -p 3306:3306 \
 	--env MYSQL_DATABASE=pebble \
 	--env MYSQL_USER=demo \
@@ -71,7 +71,6 @@ $ mason services:create pebble/db --image mariadb -p 3306:3306 \
     NAME     IMAGE       COMMAND     PORTS
     db       mariadb                 3306:3306
 ```
-
 
 <a name="next-steps"></a>
 ## Next steps

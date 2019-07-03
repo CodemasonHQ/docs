@@ -22,14 +22,14 @@ This guide will walk you through a successful deployment of a PHP application wi
 Start by installing the [Mason CLI](/docs/{{version}}/mason-cli). You can use the CLI to manage and deploy your apps, view application logs and run your apps locally.
 
 Install the Mason CLI
-```
+```bash
 $ npm install --global codemason
 ```
 
 With the Mason CLI installed, you will be able to use the `mason` command from your command line.
 
 Use the `mason login` command to log in to Codemason: 
-```
+```bash
 $ mason login
 ```
 
@@ -40,7 +40,7 @@ Let's prepare an app to deploy!
 If you're new to Codemason, we recommend using our sample PHP app to complete this tutorial. However, if you want to deploy an existing app, see [this guide](/docs/{{version}}/preparing-apps) for preparing your codebase for Codemason deployment.
 
 Start by pulling a copy of our demo PHP project. This is just a simple quote rotator app. Every time you load the page, it will randomly select a quote from an array and display it.
-```
+```bash
 $ git clone https://github.com/CodemasonHQ/getting-started-php
 $ cd getting-started-php
 ```
@@ -54,7 +54,7 @@ Now it's time to deploy our app to Codemason.
 At Codemason, developer experience is our top priority. Everything we do is about solving the problems that interrupt your flow and distract you from focusing on what counts, building great apps.
 
 First, use the `mason create` command to create a Codemason app. The CLI suggest default values, but you can override them as required.
-```
+```bash
 $ mason create getting-started-php
 
 Creating app on Codemason...
@@ -66,12 +66,12 @@ Creating app on Codemason...
 This command creates an app and prepares Codemason to receive your code.
 
 Push your changes to your Codemason Git remote. Our GitLab CI Runner will then build your Docker image and push it to the private registry, as per the build instructions in `.gitlab-ci.yml`.
-```
+```bash
 $ git push codemason master
 ```
 
 You can now deploy your app:
-```
+```bash
 $ mason services:create getting-started-php/web -p 80:80 --env-file .env
 
 Creating service on Codemason...... done
@@ -81,8 +81,8 @@ Creating service on Codemason...... done
 ```
 
 And now your database:
-```
-mason services:create getting-started-php/db --image mariadb -p 3306:3306 \
+```bash
+$ mason services:create getting-started-php/db --image mariadb -p 3306:3306 \
 	--env MYSQL_DATABASE=pebble \
 	--env MYSQL_USER=demo \
 	--env MYSQL_PASSWORD=secret \
@@ -115,17 +115,17 @@ First, let's make a change to `templates/index.phtml` so you can leave your mark
 
 
 Add your changes to source control (Git)
-```
+```bash
 $ git add .
 ```
 Commit and push the changes
-```
+```bash
 $ git commit -m "Update app"
 $ git push codemason master
 ```
 
 Run the upgrade command. Be sure to specify the service you wish to upgrade in the following format `application/service`.
-```
+```bash
 $ mason services:upgrade getting-started-php/web 
 
 Upgrading service on Codemason... Done

@@ -11,7 +11,7 @@ For those familiar with Docker, you'll know that images are the cornerstone to c
 Building an image is a critical step when working with Docker and while it's a piece of cake doing it locally, things get a little bit more complicated when you try to move from development to deployment.
 
 The good news is, with Codemason, you don't have to worry about setting up CI runners, building your image and pushing it to a private registry. It all just happens when you commit your code and push it to your Codemason Git remote with
-```
+```bash
 $ git push codemason master
 ```
 

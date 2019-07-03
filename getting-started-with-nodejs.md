@@ -22,14 +22,14 @@ This guide will walk you through a successful deployment of a Node.js applicatio
 Start by installing the [Mason CLI](/docs/{{version}}/mason-cli). You can use the CLI to manage and deploy your apps, view application logs and run your apps locally.
 
 Install the Mason CLI
-```
+```bash
 $ npm install --global codemason
 ```
 
 With the Mason CLI installed, you will be able to use the `mason` command from your command line.
 
 Use the `mason login` command to log in to Codemason: 
-```
+```bash
 $ mason login
 ```
 
@@ -41,7 +41,7 @@ If you're new to Codemason, we recommend using our sample PHP app to complete th
 
 Start by pulling a copy of our demo PHP project. This is just a simple quote rotator app. Every time you load the page, it will randomly select a quote from an array and display it.
 
-```
+```bash
 $ git clone https://github.com/CodemasonHQ/getting-started-nodejs
 $ cd getting-started-nodejs
 ```
@@ -56,7 +56,7 @@ At Codemason, developer experience is our top priority. Everything we do is abou
 
 First, use the `mason create` command to create a Codemason app. The CLI suggest default values, but you can override them as required.
 
-```
+```bash
 $ mason create getting-started-nodejs
 
 Creating app on Codemason...
@@ -67,12 +67,12 @@ Creating app on Codemason...
 This command creates an app and prepares Codemason to receive your code.
 
 Push your changes to your Codemason Git remote. Our GitLab CI Runner will then build your Docker image and push it to the private registry, as per the build instructions in `.gitlab-ci.yml`.
-```
+```bash
 $ git push codemason master
 ```
 
 You can now deploy your app:
-```
+```bash
 $ mason services:create getting-started-nodejs/web -p 80:80 --env-file .env
 
 Creating service on Codemason...... done
@@ -101,17 +101,17 @@ First, let's make a change to `views/index.ejs` so you can leave your mark on th
 
 
 Add your changes to source control (Git)
-```
+```bash
 $ git add .
 ```
 Commit and push the changes
-```
+```bash
 $ git commit -m "Update app"
 $ git push codemason master
 ```
 
 Run the upgrade command. Be sure to specify the service you wish to upgrade in the following format `application/service`.
-```
+```bash
 $ mason services:upgrade getting-started-nodejs/web 
 
 Upgrading service on Codemason... Done
