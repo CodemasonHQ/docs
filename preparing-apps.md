@@ -58,7 +58,7 @@ $ mason git:remote pebble
 ## Prepare codebase for deployment
 The most important part of preparing your codebase for deployment is building it into a Docker image. Codemason does this by looking for a `.gitlab-ci.yml` and `Dockerfile` in the root directory of your app.
 
-> NOTE: You can create these files automatically for most major languages and frameworks using [Craft Kits](/docs/{{version}}/craft-kits)
+> {tip} You can create these files automatically for most major languages and frameworks using [Craft Kits](/docs/{{version}}/craft-kits)
 
 The `.gitlab-ci.yml` file is what tells Codemason how to build your app. It works just like any normal [GitLab CI/CD Pipeline Configuration](https://docs.gitlab.com/ee/ci/yaml/). 
 
