@@ -58,7 +58,7 @@ You now have a functioning git repository. Let's have a play with it!
 ## Development environment
 Codemason leverages the power of Docker throughout an application's lifecycle. This way, you and your team can be confident that your code will run right every time.
 
-> You don't need to be a Docker expert to use Codemason.
+> {note} You don't need to be a Docker expert to use Codemason. Craft Kits will provide all the defaults you need to get started! 
 
 With the Mason CLI, you can Dockerize your apps with a single command which generates the Docker files required and adds them to the current working directory
 ```bash
@@ -83,7 +83,7 @@ $ docker-compose up
 
 Your application will now be running at `http://<docker-ip>`
 
-> We recommend using [Kitematic](https://kitematic.com/), as it provides an intuitive user interface for running Docker containers.
+> {tip} We recommend using [Kitematic](https://kitematic.com/) if you're unfamiliar with Docker, as it provides an intuitive user interface for running Docker containers.
 
 <a name="deploy-dreams"></a>
 ## Deploy dreams
