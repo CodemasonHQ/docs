@@ -9,17 +9,17 @@
     - [Authentication](/docs/{{version}}/authentication)
     - [Preparing an app](/docs/{{version}}/preparing-apps)
     - [Creating an app](/docs/{{version}}/creating-apps)
+    - [Local development](/docs/{{version}}/local-development)
 
 - ##### Deployment
-    - [Setting up local development](/docs/{{version}}/local-development)
     - [Building your Docker image](/docs/{{version}}/building)
     - [Deploying your app](/docs/{{version}}/deploying-apps)
     - [Upgrading an existing app](/docs/{{version}}/upgrading)
     - [Managing environments](/docs/{{version}}/environments)
     - [Scaling](/docs/{{version}}/scaling)
-
+    
 - ##### Languages
-    - [PHP](/docs/{{version}}/getting-started-with-php)
+    - [PHP](/docs/{{version}}/php)
     - [Node.js](/docs/{{version}}/getting-started-with-nodejs)
 
 - ##### Ecosystem
