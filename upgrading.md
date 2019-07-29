@@ -46,4 +46,4 @@ Additionally, you may `--cancel` upgrades and `--cancel-rollbacks` if required.
 
 <a name="next-steps"></a>
 ## Next steps
-Now you have got the basics of deployment down, let's learn about [managing your environments](/docs/{{version}}/environments) and [scaling](/docs/{{version}}/scaling).
+Now you have got the basics of deployment down, let's learn about [Managing multiple environments](/docs/{{version}}/environments) and [scaling](/docs/{{version}}/scaling).
