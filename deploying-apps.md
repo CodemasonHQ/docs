@@ -57,6 +57,9 @@ Creating service on Codemason...... done
     web      registry.mason.ci/benm/pebble                 80:80
 ```
 
+Once created you will be able to access your service via the Codemason domain e.g. `http://web.pebble.benm.c-m.io`.
+
+
 The CLI is capable of creating complex services, just like you can via the Codemason UI.
 ```bash
 $ mason services:create pebble/db --image mariadb -p 3306:3306 \

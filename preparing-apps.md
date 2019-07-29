@@ -3,6 +3,7 @@
 - [Track your codebase in a Git repository](#git)
 - [Add a Codemason Git remote](#remote)
 - [Prepare codebase for deployment](#codebase)
+- [Use the correct port](#port)
 - [Next steps](#next-steps)
 
 <a name="git"></a>
@@ -94,6 +95,15 @@ Remember to commit these new files to source control
 $ git add .
 $ git commit -m "Preparing codebase for Codemason"
 ```
+
+<a name="port"></a>
+## Use the correct port
+
+By default, each Codemason service gets its own Codemason domain, which follows the format `[service name].[app name].[team].c-m.io`.
+Requests to these domains are pointed to the internal port `80`. 
+In order to take advantage of this functionality, your service must run on port `80`.
+  
+
 
 <a name="next-steps"></a>
 ## Next steps
