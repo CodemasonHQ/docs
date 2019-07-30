@@ -1,15 +1,14 @@
 # Managing multiple environments
 
 - [Introduction](#introduction)
-- [Codemason CLI support](#cli-support)
-- [Next steps](#next-steps)
+- [Creating a staging environment](#creating-a-staging-environment)
 
 <a name="introduction"></a>
 ## Introduction
 
 Running your app in multiple environments is a great way to help prevent your app breaking in production.
 
-<a name="cli-support"></a>
+<a name="creating-a-staging-environment"></a>
 ## Creating a staging environment
 
 You can create a new app to represent your staging environment with the Codemason CLI
@@ -30,3 +29,7 @@ the following command to push code to your new staging environment:
 ```bash
 $ git push staging master
 ```
+
+This will push your changes to the `staging` version of your app.
+
+ 
