@@ -57,7 +57,7 @@ services:
     volumes:
       - ./storage/data/mysql:/var/lib/mysql
     ports:
-      - "3308:3306"
+      - "3306:3306"
     environment: 
       MYSQL_DATABASE: homestead
       MYSQL_USER: homestead
