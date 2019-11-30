@@ -170,7 +170,8 @@ $ mason services:upgrade hello-laravel/web \
     --volume /home/my-app/storage:/app/storage/app \
     --volume /home/my-app/storage/public:/app/public/storage
 ```
- 
+
+> {tip} If you are having issues with folder permissions try, running `chmod -R 755 /app/storage/app` from inside your service container.
  
 #### S3 Driver
 
@@ -200,3 +201,20 @@ The `command` provided adds Cron entry that will call Laravel command scheduler 
 
 
 [Learn more about Laravel Task Scheduling](https://laravel.com/docs/scheduling)
+
+
+### Passport
+
+Laravel Passport encryption keys should be stored in your env vars so they will persist after upgrades. You can easily configure Passport to load the encryption keys from your environment variables with `php artisan vendor:publish --tag=passport-config`. 
+
+> {note} Remember to commit the `config/passport.php` file to source control and push the change to Codemason.
+
+With Passport configured to use env variables to load the encryption keys, simply set `PASSPORT_PRIVATE_KEY` and `PASSPORT_PUBLIC_KEY` values
+
+```bash
+$ mason services:upgrade hello-laravel/web \
+    --env PASSPORT_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----<private key here>-----END PUBLIC KEY-----" \
+    --env PASSPORT_PUBLIC_KEY="-----BEGIN RSA PRIVATE KEY-----<public key here>-----END RSA PRIVATE KEY-----"
+```
+
+[Learn more about Laravel Passport](https://laravel.com/docs/passport)
