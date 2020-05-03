@@ -171,7 +171,7 @@ $ mason services:upgrade hello-laravel/web \
     --volume /home/my-app/storage/public:/app/public/storage
 ```
 
-> {tip} If you are having issues with folder permissions try, running `chmod -R 755 /app/storage/app` from inside your service container.
+> {tip} If you are having issues with folder permissions try, running `chmod -R 755 /app/storage/app` and `chown nobody:nobody -R /app/storage/app` from inside your service container.
  
 #### S3 Driver
 
