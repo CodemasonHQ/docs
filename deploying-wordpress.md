@@ -2,8 +2,10 @@
 
 - [Introduction](#introduction)
 - [Creating a Wordpress application](#creating-a-wordpress-application)
+- [Permission Errors - Uploads, Plugins & Themes](#permission-errors-uploads-plugins-and-themes)
 - [Increase Wordpress maximum upload file size](#increase-wordpress-maximum-upload-file-size)
 - [Upgrading Wordpress version](#upgrading-wordpress-version)
+
 
 
 <a name="introduction"></a>
@@ -81,6 +83,18 @@ You can do this by running the following command:
 $ mason run --service hello-wordpress/wordpress chown -R www-data:www-data /var/www/ 
 ```
 
+> {note} If you have permission errors, see the section below [Permission Errors - Uploads, Plugins & Themes](#permission-errors-uploads-plugins-and-themes)
+
+<a name="permission-errors-uploads-plugins-and-themes"></a>
+## Permission Errors - Uploads, Plugins & Themes
+If you are still having troubles with file permissions, first ensure that you have run the `chown` command in the Volume Permissions step above.
+
+If that's not the problem then the quickest and most effective solution is to use `FS_METHOD`.
+
+```bash
+$ mason services:upgrade hello-wordpress/wordpress \
+	--env WORDPRESS_CONFIG_EXTRA=define('FS_METHOD', 'direct' );
+```
 
 <a name="increase-wordpress-maximum-upload-file-size"></a>
 ## Increase Wordpress maximum upload file size
@@ -130,4 +144,5 @@ $ mason services:upgrade hello-wordpress/wordpress \
 ```
 
 Where `wordpress:5.3-apache` is swapped with the Wordpress version you wish to upgrade to.
+
 
